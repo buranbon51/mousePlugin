@@ -1,0 +1,74 @@
+Mou_Plug_O_speed
+Mou_Plug_O_menuPosX
+Mou_Plug_O_menuPosY
+Mou_Plug_SetO_speed(speed=15)
+Mou_Plug_SetO_menuPosX(posX=20)
+Mou_Plug_SetO_menuPosY(posY=10)
+Mou_Plug_B_GuiNumEntryMou
+Mou_Plug_B_GuiNumAssignToAssign
+Mou_Plug_B_GuiNumCurrentToAssign
+Mou_Plug_B_GuiNumCurrentToPlusPos
+Mou_Plug_B_GuiNumClickPoint
+Mou_Plug_B_WinTitleEntryMou
+Mou_Plug_B_WinTitleAssignToAssign
+Mou_Plug_B_WinTitleCurrentToAssign
+Mou_Plug_B_WinTitleCurrentToPlusPos
+Mou_Plug_B_WinTitleClickPoint
+Mou_Plug_MenuEvery
+Mou_Plug_MenuClickPoint
+Mou_Plug_SubShowAssignToAssignLoad
+Mou_Plug_SubShowAssignToAssignLoadFromWindow
+Mou_Plug_SubShowCurrentToAssign
+Mou_Plug_SubShowCurrentToAssignFromWindow
+Mou_Plug_SubShowCurrentToPlusPos
+Mou_Plug_SubShowClickPoint
+Mou_Plug_SubColorSetPos
+Mou_Plug_SubShowAssignToAssign
+Mou_Plug_SubShowEntryAssignToAssign
+Mou_Plug_SubShowEntryCurrentToAssign
+Mou_Plug_SubShowEntryCurrentToPlusPos
+Mou_Plug_SubShowEntryClickPoint
+Mou_Plug_SubClickPointChange1
+Mou_Plug_SubClickPointChange2
+Mou_Plug_SubClickPointChange3
+Mou_Plug_SubClickPointChange4
+Mou_Plug_SubClickPointChange5
+Mou_Plug_SubClickPointClick
+Mou_Plug_SubMouseMoveFromClickPoint
+Mou_Plug_SubEntryFromClick
+Mou_Plug_SubEntryFromClickFromWindow
+Mou_Plug_SubEntryFromClickFromNowPos
+Mou_Plug_SubMenuEvery
+Mou_Plug_assignToAssign(startX, startY, endX, endY, winTitle="A", screenFlag=True)
+Mou_Plug_currentToAssign(endX, endY, dragFlag=False, winTitle="", screenFlag=True)
+Mou_Plug_currentToPlusPos(plusX, plusY, dragFlag=False, winTitle="")
+Mou_Plug_assignToAssignFromEntryList(listNumber, winTitle="")
+Mou_Plug_currentToAssignFromEntryList(listNumber, winTitle="")
+Mou_Plug_currentToPlusPosFromEntryList(listNumber, winTitle="")
+Mou_Plug_clickPointClickFromEntryList(listNumber, winTitle="")
+Mou_Plug_assignToAssignFromEntryListPlusAssign(listNumber, startX="", startY="", endX="", endY="", winTitle="", screenStr="")
+Mou_Plug_currentToAssignFromEntryListPlusAssign(listNumber, posX="", posY="", dragFlag=False, winTitle="", screenFlag=True)
+Mou_Plug_currentToPlusPosFromEntryListPlusAssign(listNumber, plusX="", plusY="", dragStr="", winTitle="")
+Mou_Plug_clickPointClickFromEntryListPlusAssign(listNumber, posX="", posY="", dbClickStr="", shiftStr="", ctrlStr="", winTitle="", screenStr="")
+Mou_Plug_assignToAssignSave(listNumber, startX, startY, endX, endY, winTitle="", screenFlag=True, listName="")
+Mou_Plug_currentToAssignSave(listNumber, plusX, plusY, dragFlag=False, winTitle="", screenFlag=True, listName="")
+Mou_Plug_currentToPlusPosSave(listNumber, plusX, plusY, dragFlag=False, winTitle="", listName="")
+Mou_Plug_clickPointSave(listNumber, posX, posY, dbClickFlag=False, shiftFlag=False, ctrlFlag=False, winTitle="", screenFlag=True, listName="")
+Mou_Plug_assignToAssignLoad(listNumber)
+Mou_Plug_currentToAssignLoad(listNumber)
+Mou_Plug_currentToPlusPosLoad(listNumber)
+Mou_Plug_clickPointLoad(listNumber)
+Mou_Plug_clickPointSaveFromMousePos(listNumber, dbClickFlag=False, shiftFlag=False, ctrlFlag=False, screenFlag=True, listName="")
+Mou_Plug_click(posX, posY, dbClickFlag=False, shiftFlag=False, ctrlFlag=False, winTitle="", screenFlag=True)
+Mou_Plug_clickPointClick()
+Mou_Plug_clickPointClickPlusMoveTmp(moveX, moveY=0)
+Mou_Plug_clickPointChange(number)
+Mou_Plug_clickPointClickAssigin(pattern=1, dbClickFlag=False)
+Mou_Plug_clickPointPlusMove(plusX="", plusY=0)
+Mou_Plug_clickPointMove(posX="", posY="")
+Mou_Plug_clickPointMoveFromMousePos()
+Mou_Plug_showClickPointSetFromMousePos(screenFlag=True)
+Mou_Plug_clickPointMoveFromCursor()
+Mou_Plug_mouseMoveFromClickPoint()
+Mou_Plug_clickPointSaveFromCurrentClickPoint(listNumber, winTitle="", listName="")
+Mou_Plug_clickPointLoadFromCurrentClickPoint()
