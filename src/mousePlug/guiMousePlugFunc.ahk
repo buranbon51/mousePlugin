@@ -3,7 +3,7 @@
 gumoplugf_cleatedDateMousePlug(){
 
 	version := "v1.00"
-	cleatedDate := "2021年3月29日"
+	cleatedDate := "2023年4月6日"
 	softName := "MousePlug"
 	message := "`nプラグイン名　　：　" . softName . "`nバージョン　：　" . version . "`n作成日　　 ：　" . cleatedDate . "`n作者　　　　：　ブランボン`n"
 
