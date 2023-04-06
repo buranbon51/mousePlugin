@@ -144,6 +144,7 @@ Mou_Plug_SubEntryFromClick:
 
 Mou_Plug_SubEntryFromClickFromWindow:
 	gumoplugf_hideGui40()
+	rmopluf_beforeWindowControl()
 	mous_mocroClickEntry(2)
 	return
 
