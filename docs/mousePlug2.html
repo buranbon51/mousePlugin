@@ -1,0 +1,1616 @@
+
+<!DOCTYPE HTML>
+<html lang="ja">
+<head prefix="og: https://ogp.me/ns#">
+
+<meta charset="utf-8">
+
+<meta name="keywords" content="mousePlug。その２,TextRunRun,テキストランラン,テキストルンルン">
+<meta name="description" content="TextRunRunの追加機能のmousePlugの細かい仕様を説明">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone-no">
+
+<link rel="shortcut icon" href="common/imgCommon/shorticon.ico">
+<link rel="apple-touch-icon" href="common/imgCommon/touchicon.png" />
+<link rel="icon" sizes="192x192" href="common/imgCommon/icon192.png" />
+
+
+<title>mousePlug。その２ - ブランボンのGitHubPagesのやつ</title>
+
+<link type="text/css" href="common/cssCommon/resetAll.css" rel="stylesheet" />
+<link type="text/css" href="common/cssCommon/buBootstrap.css" rel="stylesheet" />
+
+<link type="text/css" href="common/cssCommon/commonCssbu.css" rel="stylesheet" />
+<link type="text/css" href="css/trrCommon.css" rel="stylesheet" />
+<link type="text/css" href="css/mousePlug.css" rel="stylesheet" />
+
+    <script src="common/jQuery/jquery.min.js"></script>
+    <script src="common/javaScript/jQueryMenuSlide.js"></script>
+
+</head>
+<body>
+
+<div id="allContents">
+
+    <header id="header-toppage">
+        <div id="bg-headerbg"></div>
+        <div id="header-contents">
+            <div id="div-header-title">
+                <div id="header-title-2">
+                    <h1 id="alltop-title">
+                        ブランボン<span class="alltop-title-little">の</span><br class="br-mobile-only" /><span class="alltop-title-little2">GitHub Pages</span><span class="alltop-title-little">のやつ</span>
+                    </h1>
+                </div>
+            </div>
+            <nav id="nav-head-trrPage">
+                <div id="div-head-trrPage">
+                    <p class="p-head-trrPage1">
+                        関連ページ
+                    </p>
+                    <div class="trrhomepage-block">
+                        <a href="https://textrunrunburanbon.com" target="_blank">TextRunRunの説明を見るページ</a>
+                    </div>
+                </div>
+            </nav>
+            <div id="pagetop-first"></div>
+        </div>
+    </header>
+
+<div id="page-contents">
+
+<main id="mainId">
+
+<article class="articleClass">
+
+    <h1 class="h1-first">マウスの動きを登録する追加機能 mousePlug。その２</h1>
+    <nav class="breadcrumb-art">
+        <ul class="ul-breadcrumb">
+            <li><span class="breadcrumb-current">トップ</span></li>
+            <li><a href="index.html">mousePlug。その１</a></li>
+            <li><span class="breadcrumb-current">mousePlug。その２</span></li>
+        </ul>
+    </nav>
+
+<div class="width-short">
+    <div class="div-section-one d-type-basic">
+        <nav class="categorylinks">
+            <div class="categorylinks-title">
+                <span class="span-categorylinks-title">mousePlugの関連</span>
+            </div>
+            <ul class="ul-categorylinks-row">
+                <li><a href="index.html">その<span class="numeral">1</span></a></li>
+                <li class="categorylinks-current">その<span class="numeral">2</span></li>
+                <li><a href="mousePlugDict.html">mousePlugの変数・関数・サブルーチン</a></li>
+            </ul>
+        </nav>
+    </div><!--  div-section-one  -->
+    <div class="div-section-one d-type-basic">
+        <nav class="index-thispage">
+            <h2 class="t-index-thispage">このページの目次</h2>
+            <ul class="ul-index-preface">
+                <li>
+                    <a href="#title_preface">前書き</a>
+                </li>
+            </ul>
+            <ul class="ul-index-thispage">
+                <li>
+                    <a href="#title1">色を取得</a>
+                </li>
+                <li>
+                    <a href="#title2">スクリプトで使う</a>
+                </li>
+                <li>
+                    <a href="#title3">option&#46;txt</a>
+                    <ul class="ul-index-thispage-2">
+                        <li>
+                            <a href="#title3_1">fontSize</a>
+                        </li>
+                        <li>
+                            <a href="#title3_2">fontName</a>
+                        </li>
+                        <li>
+                            <a href="#title3_3">fontSizeSmall</a>
+                        </li>
+                        <li>
+                            <a href="#title3_4">fontSizeTab</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#title4">単体で使う</a>
+                    <ul class="ul-index-thispage-2">
+                        <li>
+                            <a href="#title4_1">icon&#46;ico</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#title5">モニターの大きさの違いなどによる問題</a>
+                    <ul class="ul-index-thispage-2">
+                        <li>
+                            <a href="#title5_1">
+                                拡大／縮小が
+                                <span class="pickup-easy-s">100&#37;</span>
+                                のパソコンで使う
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#title5_2">
+                                拡大／縮小が
+                                <span class="pickup-easy-s">100&#37;</span>
+                                のパソコンで、
+                                TextRunRun
+                                を起動させておき、その後モニターを変える
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#title5_3">
+                                古めの
+                                AutoHotkey&#46;exe
+                                を使う
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div><!--  div-section-one  -->
+
+    <section id="title_preface" class="sectionFirst d-type-basic">
+        <h1 class="t-preface">
+            <span class="t-preface-inner">前書き</span>
+        </h1>
+        <p class="p-sub">
+            <span class="thisword-r">mousePlug</span>
+            の説明の続きをします。
+        </p>
+        <p class="p-sub">
+            前回のページでも一応書いておいた事ですが、
+        </p>
+        <div class="inputOneLine d-type-small">
+            <code class="srcCode">
+                <span class="ahkComm">Gosub</span>&#44; Mou_Plug_SubMenuEvery
+            </code>
+        </div>
+        <p class="p-sub">
+            これを使うと、
+            <span class="thisword-s">mousePlug</span>
+            のメニューが表示します。<br />
+            <span class="brackets-span">
+                <span class="thisword-r">mousePlug</span>
+                のソースコードが正しく追加されている場合の話ですが
+            </span>
+        </p>
+        <div class="img-div">
+            <img src="image/mousePlugImg/mouMenu.png" class="img-w-350px" alt="画像">
+        </div>
+        <div class="bundle">
+            <p class="p-sub">
+                <span class="thisword-r">mousePlug</span>
+                を使うなら、このスクリプトを
+                <span class="softDfn-s">常時使用のキー</span>
+                か
+                <span class="softDfn-s">アイテム</span>
+                にしておくことを薦めます。
+            </p>
+        </div>
+    </section><!-- sectionFirst -->
+    <section id="title1" class="sectionFirst d-type-basic">
+        <h1 class="t-lank1">色を取得</h1>
+        <p class="p-sub">
+            メニューに、
+            <span class="guiText-r">色を取得</span>
+            という項目があります。
+        </p>
+        <p class="p-sub">
+            単純にこれは、マウスの位置の色を「RGB」形式の６桁の数字で表す様にしているものです。
+        </p>
+        <div class="bundle">
+            <p class="p-sub">
+                <span class="guiText-r">色を取得</span>
+                を選ぶとまず、マウスが少し移動する様になっています。
+            </p>
+            <p class="p-sub">
+                これは、マウス自体の色を取得してしまうのを防ぐためです。
+            </p>
+            <p class="p-sub">
+                そして、
+                <span class="softDfn">分割テキスト</span>
+                に取得した色を記入する様になっています。
+            </p>
+            <div class="img-div">
+                <img src="image/mousePlugImg/mouColorRead.png" class="img-w-350px" alt="画像">
+            </div>
+        </div>
+        <div class="bundle">
+            <p class="p-sub">
+                なぜ
+                <span class="softDfn">分割テキスト</span>
+                の方に記入する様になっているのかですが、これといった理由はありません。
+            </p>
+            <p class="p-sub">
+                作者のブランボンにとっては、特にそれで不便に感じた事はないのでとりあえずこの仕様のままにしています。
+            </p>
+        </div>
+        <div class="bundle">
+            <p class="p-sub">
+                ちなみに、３パターン記入されています。ですので一応説明しておきます。
+            </p>
+            <ol class="ol-circle">
+                <li>
+                    <p class="p-sub">
+                        一つ目は、よくある「RGB」形式の６桁の「16進数」で表しています。
+                    </p>
+                </li>
+                <li>
+                    <p class="p-sub">
+                        二つ目ですが、この色の取得は
+                        <span class="ahk-pickup-s">PixelGetColor</span>
+                        の
+                        <span class="autoHotkey">AHKコマンド</span>
+                        を使って色を取得しています。
+                    </p>
+                    <p class="p-sub">
+                        これを使うと、「BGR」の形式、つまり、「RGB」の時と、青と赤の数字の箇所が入れ替わっている形式で表される様です。
+                    </p>
+                    <p class="p-sub">
+                        この二つ目のは、この
+                        <span class="ahk-pickup-s">PixelGetColor</span>
+                        で得た値をそのまま記述したのがこの箇所です。
+                    </p>
+                </li>
+                <li>
+                    <p class="p-sub">
+                        三つ目は、「RGB」形式の「16進数」を３桁で表しているというだけです。
+                    </p>
+                </li>
+            </ol>
+        </div>
+        <p class="p-sub">
+            <span class="guiText-r">色を取得</span>
+            の説明は以上です。
+        </p>
+    </section><!-- sectionFirst -->
+    <section id="title2" class="sectionFirst d-type-basic">
+        <h1 class="t-lank1">スクリプトで使う</h1>
+        <p class="p-sub">
+            この
+            <span class="thisword-s">mousePlug</span>
+            は
+            <abbr class="abbr-softName-s" title="TextRunRun">TRR</abbr>
+            に追加して、スクリプトから使う事を前提に作られているものです。
+        </p>
+        <p class="p-sub">
+            ここでは一応、紹介しておいた方がいいと思うスクリプトを挙げておきます。
+        </p>
+        <p class="p-sub">
+            <span class="softDfn">アイテム</span>
+            か何かにして使いやくすしておくといいと思います。
+        </p>
+        <div class="example-one d-type-basic">
+            <p class="p-sub">
+                <span class="thisword-r">mousePlug</span>
+                のメニューを表示する。
+            </p>
+            <div class="inputOneLine d-type-small">
+                <code class="srcCode">
+                    <span class="ahkComm">Gosub</span>&#44; Mou_Plug_SubMenuEvery
+                </code>
+            </div>
+            <p class="p-sub">
+                しつこいくらいに何度も書いている事ですが、
+                <span class="thisword-r">mousePlug</span>
+                の代表的なメニューなのでこれを用意して使った方がいいと思います。
+            </p>
+            <div class="bundle-no-bottom">
+                <p class="p-sub">
+                    ちなみに、メニュー名が
+                    <span class="pickup-easy-2-s">Mou_Plug_MenuEvery</span>
+                    なので、
+                </p>
+                <div class="width-long-wrap">
+                    <div class="inputOneLine width-long-1 d-type-small">
+                        <code class="srcCode">
+                            <span class="ahkComm">Menu</span>&#44; Mou_Plug_MenuEvery &#44; Show &#44; <span class="varPercent">&#37;Mou_Plug_O_menuPosX&#37;</span> &#44; <span class="varPercent">&#37;Mou_Plug_O_menuPosY&#37;</span>
+                        </code>
+                    </div>
+                </div>
+                <p class="p-sub">
+                    これを使ってもほぼ同じです。
+                </p>
+            </div>
+        </div>
+        <div class="example-one d-type-basic">
+            <p class="p-sub">
+                <span class="windowName-s">登録</span>
+                のウインドウを表示する。
+            </p>
+            <div class="inputOneLine d-type-small">
+                <code class="srcCode">
+                    <span class="ahkComm">Gosub</span>&#44; Mou_Plug_SubShowEntryClickPoint
+                </code>
+            </div>
+            <p class="p-sub">
+                これを表示させます。
+            </p>
+            <div class="img-div">
+                <img src="image/mousePlugImg/moulistClickP.png" class="img-w-300px" alt="画像">
+            </div>
+            <p class="p-sub">
+                ただそれだけです。
+            </p>
+        </div>
+        <div class="example-one d-type-basic">
+            <p class="p-sub">
+                <span class="windowName-r">マウスの登録</span>
+                のウインドウの
+                <span class="guiText-s">クリックポイント</span>
+                の
+                <span class="button-gui-r">今のマウスの位置を読み出し</span>
+                のボタンと同じ。
+            </p>
+            <!--  スペース   -->
+            <div class="spacer-1"></div>
+            <div class="inputOneLine d-type-small">
+                <code class="srcCode">
+                    Mou_Plug_showClickPointSetFromMousePos&#40;&nbsp;&#41;
+                </code>
+            </div>
+            <p class="p-sub">
+                この関数を実行すると、マウスの位置の数字を
+                <span class="guiText-s">クリックポイント</span>
+                用の「マウスの位置を数字で指定するウインドウ」の指定欄に記入します。
+            </p>
+            <div class="bundle">
+                <p class="p-sub">
+                    もしくは、
+                </p>
+                <div class="inputOneLine d-type-small">
+                    <code class="srcCode">
+                        Mou_Plug_clickPointSaveFromMousePos&#40;&nbsp;1&nbsp;&#41;
+                    </code>
+                </div>
+                <p class="p-sub">
+                    この関数を実行すると、
+                    <span class="windowName-r">マウスの登録</span>
+                    のウインドウの
+                    <span class="guiText-s">クリックポイント</span>
+                    の種類のリストの
+                    <span class="pickup-easy-s">set1</span>
+                    に、今のマウスの位置の数字を登録します。
+                </p>
+                <p class="p-sub">
+                    引数の指定の
+                    <span class="input-easy-s">1</span>
+                    の部分を
+                    <span class="input-easy-s">2</span>
+                    に変えると
+                    <span class="pickup-easy-s">set2</span>
+                    に登録します。
+                </p>
+            </div>
+            <div class="supplement inner d-type-small-basic">
+                <div class="supplement-caption">
+                    補足
+                </div>
+                <p class="p-sub">
+                    登録した後は
+                </p>
+                <div class="inputOneLine d-type-small">
+                    <code class="srcCode">
+                        Mou_Plug_clickPointClickFromEntryList&#40;&nbsp;1&nbsp;&#41;
+                    </code>
+                </div>
+                <p class="p-sub">
+                    この関数で、
+                    <span class="pickup-easy-r">set1</span>
+                    に登録した位置を左クリックします。
+
+                </p>
+            </div>
+        </div>
+        <div class="example-one d-type-basic">
+            <p class="p-sub">
+                マウスをドラッグする関数。
+            </p>
+            <div class="width-long-wrap">
+                <div class="inputOneLine width-long-1 d-type-small">
+                    <code class="srcCode">
+                        Mou_Plug_assignToAssign&#40; startX&#44; startY&#44; endX&#44; endY&#44; winTitle&#61;<span class="dbQuoute">&quot;A&quot;</span>&#44; screenFlag&#61;<span class="ahkComm">True</span> &#41;
+                    </code>
+                </div>
+            </div>
+            <p class="p-sub">
+                ただ単にマウスをドラッグするだけの関数です。
+            </p>
+            <p class="p-sub">
+                特に変わった処理はしていないため、
+            </p>
+            <div class="width-long-wrap">
+                <div class="inputOneLine width-long-1">
+                    <code class="srcCode">
+                        <span class="ahkComm">MouseClickDrag</span>&#44; Left &#44; X1 &#44; Y1 &#44; X2 &#44; Y2 &#91;&#44; Speed &#44; R &#93;
+                    </code>
+                </div>
+            </div>
+            <p class="p-sub">
+                この
+                <span class="autoHotkey">AHKコマンド</span>
+                を使った場合と同じといえば同じなので、あえてこの関数を使う必要はないかもしれないですが。
+            </p>
+        </div>
+        <div class="example-one d-type-basic">
+            <p class="p-sub">
+                <span class="windowName-r">マウスの登録</span>
+                のウインドウの
+                <span class="guiText-s">指定位置から指定位置</span>
+                の種類のリストに登録してあるものを
+                &#40;
+                <span class="pickup-easy-r">set1</span>
+                などを
+                &#41;
+                実行する関数。
+            </p>
+            <div class="width-long-wrap">
+                <div class="inputOneLine width-long-1 d-type-small">
+                    <code class="srcCode">
+                        Mou_Plug_assignToAssignFromEntryList&#40; listNumber&#44; winTitle&#61;<span class="dbQuoute">&quot;&quot;</span> &#41;
+                    </code>
+                </div>
+            </div>
+            <p class="p-sub">
+                これも、ただ単にマウスをドラッグするだけの関数です。
+            </p>
+        </div>
+        <p class="p-sub">
+            使うなら、
+            <span class="softDfn">アイテム</span>
+            とか
+            <span class="softDfn">常時使用のキー</span>
+            にして使える様にしておいてから使うとよいと思います。
+        </p>
+        <p class="p-sub">
+            <span class="thisword-r">mousePlug</span>
+            で使う用のサブルーチンや関数は沢山存在しています。
+        </p>
+        <p class="p-sub">
+            ですが、ほとんどは趣味で作った様なものばかりなので<br />
+            &#40;
+            <abbr class="abbr-softName-r" title="TextRunRun">TRR</abbr>
+            事態がそんなものなのですが
+            &#41;<br />
+            使える様なものは、上の例に挙げたものぐらいかもしれません。
+        </p>
+        <div class="particular-page">
+            <p class="p-sub">
+                こだわりをもった使い方をしたい方や興味をもってくれた方は以下のページに全部書くようにしているのでそれを参考にしてください。
+            </p>
+            <p class="p-sub">
+                <a href="mousePlugDict.html" target="_blank" class="blank-siteword">mousePlugの変数・関数・サブルーチン</a>
+            </p>
+        </div>
+    </section><!-- sectionFirst -->
+    <section id="title3" class="sectionFirst d-type-basic">
+        <h1 class="t-lank1">option&#46;txt</h1>
+        <p class="p-sub">
+            <span class="cancelline-bu">
+                <span class="thisword-s cancelline-bu">windowPlug</span>
+                と同じなのでそちらを参考にしてください。
+            </span>
+        </p>
+        <p class="p-sub-attach-bottom">
+            <span class="thisword-r">mousePlug</span>
+            の Gui は、
+            &#40;
+            <span class="windowName-r">マウスの登録</span>
+            のウインドウなど
+            &#41;
+            <abbr class="abbr-softName-r" title="TextRunRun">TRR</abbr>
+            の
+            <span class="mainMenu-s">設定</span>
+            で指定する文字の大きさやフォント名の影響を受ける様になっています。
+        </p>
+        <p class="brackets">
+            <span class="windowName-r">再起動が必要な設定</span>
+            の方で指定するものの影響を受けます。
+        </p>
+        <p class="p-sub">
+            それとは別に、
+            <span class="windowName-r">マウスの登録</span>
+            のウインドウの文字の大きさやフォント名を設定する方法を作っているのでそれの説明をします。
+        </p>
+        <div class="bundle">
+            <p class="p-sub">
+                <span class="thisword-r">mousePlug</span>
+                のソースコードを
+                <abbr class="abbr-softName-s" title="TextRunRun">TRR</abbr>
+                に加えて、その後にそれを起動すると、<br />
+                <abbr class="abbr-softName-r" title="TextRunRun">TRR</abbr>
+                があるフォルダを基準として、
+            </p>
+            <div class="filePath-block">
+                trrEvery&#92;user&#92;mousePlug&#92;option&#46;txt
+            </div>
+            <p class="p-sub">
+                このファイルが作られる様になっています。
+            </p>
+        </div>
+        <div class="bundle">
+            <p class="p-sub">
+                この
+                <span class="filePath-pickup-s">option&#46;txt</span>
+                には以下の事が記入されているはずです。
+            </p>
+            <div class="inputBox">
+                <code class="srcCode">
+                    &#35;設定をする。何も記入しなければ初期値を使用する。<br />
+                    &#35;fontSize&#61;12<br />
+                    &#35;fontName&#61;<br />
+                    &#35;fontSizeSmall&#61;10<br />
+                    &#35;fontSizeTab&#61;10
+                </code>
+            </div>
+        </div>
+        <p class="p-sub">
+            これに記入して文字の大きさやフォント名を指定できる様になっています。
+        </p>
+        <div class="bundle">
+            <p class="p-sub">
+                <span class="pickup-easy-2-r">&#35;</span>
+                の文字はコメント文にするための文字です。
+            </p>
+            <p class="p-sub">
+                この文字が先頭にある行は、書いてる事が無効になります。
+            </p>
+        </div>
+        <p class="p-sub">
+            以下にそれぞれの説明をします。
+        </p>
+        <section id="title3_1" class="sectionSecond d-type-basic">
+            <h2 class="t-lank2">fontSize</h2>
+            <p class="p-sub">
+                文字の大きさを指定します。
+            </p>
+            <p class="p-sub">
+                <span class="thisword-r">mousePlug</span>
+                の Gui の中のほとんどの文字がこの影響を受けます。
+            </p>
+            <p class="p-sub">
+                数字を指定してください。
+            </p>
+            <div class="bundle-no-bottom">
+                <p class="p-sub">
+                    何も指定しなければ、
+                    <span class="pickup-easy-r">12</span>
+                    が指定されます。
+                </p>
+                <p class="p-sub">
+                    ただし、モニターの大きさなどによって多少の初期値が変わる様になっています。
+                </p>
+            </div>
+        </section><!-- sectionSecond -->
+        <section id="title3_2" class="sectionSecond d-type-basic">
+            <h2 class="t-lank2">fontName</h2>
+            <p class="p-sub">
+                文字のフォント名を文字列で指定します。
+            </p>
+            <p class="p-sub">
+                これも
+                <span class="thisword-s">mousePlug</span>
+                の Gui の中のほとんどの文字がこの影響を受けます。
+            </p>
+            <p class="p-sub">
+                どのフォント名が有効になるかはユーザーのパソコンしだいです。
+            </p>
+            <p class="p-sub">
+                試しに<br />
+                <span class="inputinline-r">メイリオ</span>
+                や<br />
+                <span class="inputinline-r">BIZ UDゴシック</span><br />
+                などを記入すれば実験できるのではないかと思います。
+            </p>
+        </section><!-- sectionSecond -->
+        <section id="title3_3" class="sectionSecond d-type-basic">
+            <h2 class="t-lank2">fontSizeSmall</h2>
+            <p class="p-sub">
+                これも文字の大きさなのですが、
+                <span class="thisword-r">mousePlug</span>
+                の Gui の中の文字には、小さい文字がいくつかあります。
+            </p>
+            <p class="p-sub">
+                その文字は<br />
+                <span class="pickup-easy-r">fontSize</span>
+                ではなく、こっちの<br />
+                <span class="pickup-easy-r">fontSizeSmall</span>
+                の方の影響を受けます。
+            </p>
+            <p class="p-sub">
+                数字を指定してください。
+            </p>
+            <div class="bundle-no-bottom">
+                <p class="p-sub">
+                    何も指定しなければ、
+                    <span class="pickup-easy-r">10</span>
+                    が指定されます。
+                </p>
+                <p class="p-sub">
+                    ただしこれも、モニターの大きさなどによって多少の初期値が変わる様になっています。
+                </p>
+            </div>
+        </section><!-- sectionSecond -->
+        <section id="title3_4" class="sectionSecond d-type-basic">
+            <h2 class="t-lank2">fontSizeTab</h2>
+            <p class="p-sub">
+                <span class="windowName-r">マウスの登録</span>
+                のウインドウの上部にはタブがありますが、その文字の大きさはこれの影響を受けます。
+            </p>
+            <p class="p-sub">
+                数字を指定してください。
+            </p>
+            <div class="bundle-no-bottom">
+                <p class="p-sub">
+                    何も指定しなければ、
+                    <span class="pickup-easy-r">10</span>
+                    が指定されます。
+                </p>
+                <p class="p-sub">
+                    ただしこれも、モニターの大きさなどによって多少の初期値が変わる様になっています。
+                </p>
+            </div>
+        </section><!-- sectionSecond -->
+        <div class="bundle">
+            <p class="p-sub">
+                この
+                <span class="filePath-pickup-s">option&#46;txt</span>
+                で設定した事は、
+                <abbr class="abbr-softName" title="TextRunRun">TRR</abbr>
+                上で設定された事よりも優先されます。
+            </p>
+            <p class="p-sub">
+                先ほども書きましたが、この
+                <span class="filePath-pickup-s">option&#46;txt</span>
+                は無ければ自動で作られる様になっています。
+            </p>
+            <p class="p-sub">
+                ですので、文字の大きさが不自然だった場合などはこのファイルを削除してみてください。
+            </p>
+        </div>
+        <div class="div-section-one d-type-basic">
+            <p class="p-sub">
+                今さらですが、
+                <span class="filePath-pickup-r">option&#46;txt</span>
+                に限らず、この
+                <span class="thisword-s">mousePlug</span>
+                で登録した情報などは
+            </p>
+            <div class="filePath-block">
+                trrEvery&#92;user&#92;mousePlug
+            </div>
+            <p class="p-sub">
+                のフォルダ内に保存される様になっています。
+            </p>
+            <p class="p-sub">
+                つまり、
+                <abbr class="abbr-softName-r" title="TextRunRun">TRR</abbr>
+                の
+                <span class="filePath-pickup-s">user</span>
+                フォルダ内に作られる様になっています。
+            </p>
+        </div><!--  div-section-one  -->
+    </section><!-- sectionFirst -->
+    <section id="title4" class="sectionFirst d-type-basic">
+        <h1 class="t-lank1">単体で使う</h1>
+        <p class="p-sub">
+            この
+            <span class="thisword-s">mousePlug</span>
+            は
+            <abbr class="abbr-softName-s" title="TextRunRun">TRR</abbr>
+            のプラグインとして使うものだと説明しました。
+        </p>
+        <p class="p-sub">
+            基本的にはそうして使うものですが、
+            <abbr class="abbr-softName-r" title="TextRunRun">TRR</abbr>
+            に混ぜたりせずに、
+            <span class="thisword-r">mousePlug</span>
+            単体で使う事もできます。
+        </p>
+        <p class="p-bundle">
+            <span class="thisword-r">mousePlug</span>
+            を試しに使ってみたい方などはこの方法で使ってみるとよいと思います。
+        </p>
+        <div class="bundle">
+            <p class="p-sub">
+                単体で使うには、
+                <span class="othersoft-r">AutoHotkey&#46;exe</span>
+                が必要です。
+            </p>
+            <p class="p-sub">
+                ソースコード版の
+                <abbr class="abbr-softName-s" title="TextRunRun">TRR</abbr>
+                を使っているなら
+                <span class="othersoft-s">AutoHotkey&#46;exe</span>
+                を使っているはずなのでそれをコピーして使えばよいです。
+            </p>
+            <p class="p-sub">
+                それを、
+                <span class="thisword-r">mousePlug</span>
+                をダウンロードした時のフォルダの中身、つまり
+                <span class="filePath-pickup-s">MainMousePlug&#46;ahk</span>
+                のファイルなどがあるフォルダに加えてください。
+            </p>
+        </div>
+        <div class="img-div">
+            <img src="image/mousePlugImg/mouPlugAhkPlus.png" class="img-w-450px" alt="画像">
+        </div>
+        <div class="bundle">
+            <p class="p-sub">
+                後は、この
+                <span class="othersoft-s">AutoHotkey.exe</span>
+                を、
+                <span class="filePath-pickup-r">MainMousePlug&#46;ahk</span>
+                のファイルが引数になるようにして起動すれば、単体の
+                <span class="thisword-s">mousePlug</span>
+                が使えます。
+            </p>
+        </div>
+        <div class="example-one d-type-small-basic-no-top">
+            <div class="example-one-caption">
+                例
+            </div>
+            <p class="p-sub">
+                <abbr class="abbr-softName-r" title="TextRunRun">TRR</abbr>
+                の
+                <span class="softDfn">アイテム</span>
+                から使える様にするなら、
+            </p>
+            <div class="creation-item-block">
+                リンク先
+            </div>
+            <div class="creation-variable-block">
+                &#91;mousePlugのフォルダ&#93;&#92;AutoHotkeyU32&#46;exe
+            </div>
+            <div class="creation-item-block">
+                引数
+            </div>
+            <div class="creation-variable-block">
+                &#91;mousePlugのフォルダ&#93;&#92;MainMousePlug&#46;ahk
+            </div>
+            <p class="p-sub">
+                こんなものを用意して使う様にする。
+            </p>
+            <!--  スペース   -->
+            <div class="spacer-1"></div>
+            <p class="p-sub">
+                ショートカットのファイルを用意して使うなら
+            </p>
+            <div class="creation-item-block">
+                リンク先
+            </div>
+            <div class="width-long-wrap">
+                <div class="creation-variable-block width-long-1">
+                    &#91;mousePlugのフォルダ&#93;&#92;AutoHotkeyU32&#46;exe&nbsp;&nbsp;&#91;mousePlugのフォルダ&#93;&#92;MainMousePlug&#46;ahk
+                </div>
+            </div>
+            <p class="p-sub">
+                これをリンク先に指定しているショートカットを作ってそれを使う事で
+                <span class="thisword-s">mousePlug</span>
+                を単体で使う事ができます。
+            </p>
+            <!--  スペース   -->
+            <div class="spacer-1"></div>
+            <div class="div-sub">
+                <p class="brackets">
+                    作業フォルダーは、無記入でも何を指定しても同じです。<br />
+                    <span class="filePath-pickup-r">MainMousePlug&#46;ahk</span>
+                    がある位置が作業フォルダーになる様になっています。
+                </p>
+            </div>
+        </div>
+        <div class="bundle">
+            <p class="p-sub">
+                当然ですが、単体で使った場合は
+                <abbr class="abbr-softName-s" title="TextRunRun">TRR</abbr>
+                のスクリプトの中で関数やサブルーチンを使う方法はとれません。
+            </p>
+            <p class="p-sub">
+                ですが、
+                <span class="thisword-r">mousePlug</span>
+                を実験的に使う分には単体で使ってみた方がどんなものか理解しやすいと思います。
+            </p>
+            <p class="p-sub">
+                興味を持った方や、このホームページの説明でよく分からないと思った方は試しに単体で使ってみるのもよいと思います。
+            </p>
+        </div>
+        <section id="title4_1" class="sectionSecond d-type-basic">
+            <h2 class="t-lank2">icon&#46;ico</h2>
+            <p class="p-sub">
+                単体で使った場合は
+                <span class="filePath-pickup-s">icon&#46;ico</span>
+                の名前のファイルを置くとそれをアイコンとして使えます。
+            </p>
+            <p class="p-sub">
+                置く位置はトップの位置、つまり<br />
+                <span class="filePath-pickup-r">AutoHotkey&#46;exe</span>
+                や、
+                <span class="filePath-pickup-r">MainMousePlug&#46;ahk</span>
+                がある位置です。
+            </p>
+        </section><!-- sectionSecond -->
+        <div class="div-section-one d-type-basic">
+            <div class="slideWrap-Wrap">
+                <div class="slideWrap slideWrap-style">
+                    <h2 class="slideTitle t-slide-style">
+                        単体で使った時の見本
+                    </h2>
+                    <div class="slideViewContent">
+                        <p class="p-slideViewContent">
+                            一応、単体で使った時の見本を紹介しておきます。
+                        </p>
+                        <p class="slideViewContent-next">
+                            続きを見る
+                        </p>
+                    </div>
+                    <div class="slideContent">
+                        <p class="p-slideContent">
+                            単体で起動した場合、タスクトレイにアイコンが表示する様になっています。
+                        </p>
+                        <p class="p-sub">
+                            そのタスクトレイのアイコンをクリックすると、ウインドウが表示します。
+                        </p>
+                        <p class="p-sub">
+                            そのウインドウには、「右クリック位置」と書かれている箇所があります。
+                        </p>
+                        <div class="img-div">
+                            <img src="image/mousePlugImg/mousePlugSoft.png" class="img-w-400px" alt="画像">
+                        </div>
+                        <p class="p-sub">
+                            右クリックすると、
+                            <span class="thisword-r">mousePlug</span>
+                            のメニューが表示します。
+                        </p>
+                        <p class="p-sub">
+                            後は大体同じ使い方ができると思います。
+                        </p>
+                        <!--  スペース   -->
+                        <div class="spacer-1"></div>
+                        <p class="p-sub">
+                            ちなみにこのウインドウは、何らかの結果表示やエラーがあった場合に出力用に使われるウインドウです。
+                        </p>
+                    </div>
+                </div>
+                <noscript>
+                    <div class="slideNoScript slideWrap-style">
+                        <div class="slideNoScript-caption">
+                            JavaScript が off になっている時
+                        </div>
+                        <details>
+                            <summary class="noscript-slideTitle t-slide-style">
+                                単体で使った時の見本
+                            </summary>
+                            <p class="p-sub">
+                                一応、単体で使った時の見本を紹介しておきます。
+                            </p>
+                            <p class="p-sub">
+                                単体で起動した場合、タスクトレイにアイコンが表示する様になっています。
+                            </p>
+                            <p class="p-sub">
+                                そのタスクトレイのアイコンをクリックすると、ウインドウが表示します。
+                            </p>
+                            <p class="p-sub">
+                                そのウインドウには、「右クリック位置」と書かれている箇所があります。
+                            </p>
+                            <div class="img-div">
+                                <img src="image/mousePlugImg/mousePlugSoft.png" class="img-w-400px" alt="画像">
+                            </div>
+                            <p class="p-sub">
+                                右クリックすると、
+                                <span class="thisword-r">mousePlug</span>
+                                のメニューが表示します。
+                            </p>
+                            <p class="p-sub">
+                                後は大体同じ使い方ができると思います。
+                            </p>
+                            <!--  スペース   -->
+                            <div class="spacer-1"></div>
+                            <p class="p-sub">
+                                ちなみにこのウインドウは、何らかの結果表示やエラーがあった場合に出力用に使われるウインドウです。
+                            </p>
+                        </details>
+                    </div>
+                </noscript>
+            </div>
+        </div><!--  div-section-one  -->
+
+    </section><!-- sectionFirst -->
+    <section id="title5" class="sectionFirst d-type-basic">
+        <h1 class="t-lank1">モニターの大きさの違いなどによる問題</h1>
+        <p class="p-sub">
+            今さらですが、実はこの
+            <span class="thisword-s">mousePlug</span>
+            は、モニターの大きさの違いなどの原因で使い物にならなかったりします。
+        </p>
+        <div class="bundle">
+            <p class="p-sub">
+                作者のブランボンが確認した範囲で分かっている事です。
+            </p>
+            <p class="p-sub">
+                パソコンを別のモニターに接続して、そのモニターだけの状態にした後に
+                <abbr class="abbr-softName-s" title="TextRunRun">TRR</abbr>
+                を起動した場合、
+            </p>
+            <p class="p-sub">
+                <span class="guiText-r">マウスで登録する</span>
+                →
+                <span class="guiText-r">ウインドウを指定する</span>
+                を選ぶと次の様になったりします。
+            </p>
+            <div class="img-div">
+                <img src="image/mousePlugImg/mouDpiDiff1.png" class="img-w-400px" alt="画像">
+            </div>
+        </div>
+        <p class="p-bundle">
+            この様に、対象にしているウインドウと青い部分の大きさが合っていません。
+        </p>
+        <p class="p-sub-attach-bottom">
+            なぜこうなるかの原因を説明すると、
+        </p>
+        <ul class="ul-disc-mini">
+            <li>
+                青い部分の大きさ
+            </li>
+            <li>
+                右クリックによって取得できるマウスの位置
+            </li>
+        </ul>
+        <p class="p-sub-attach-top">
+            これらに
+            <span class="pickup-easy-2-s">A_GuiX</span>
+            と
+            <span class="pickup-easy-2-s">A_GuiY</span>
+            を使っているからです。
+        </p>
+        <div class="bundle">
+            <p class="p-sub">
+                どうやら、
+                <span class="autoHotkey">AutoHotkey</span>
+                では、
+            </p>
+            <ol class="ol-circle">
+                <li>
+                    モニターのサイズが違う場合。
+                </li>
+                <li>
+                    Windows の設定の「拡大縮小のレイアウト」の設定で、
+                    <span class="pickup-easy-r">100&#37;</span>
+                    以外を設定している場合。
+                </li>
+                <li>
+                    Windows の設定の「拡大縮小のレイアウト」の設定で、
+                    ディスプレイの解像度が高い解像度の場合。
+                </li>
+            </ol>
+            <p class="p-sub">
+                どうも、これらの場合では、
+                <span class="pickup-easy-2-s">A_GuiX</span>
+                と
+                <span class="pickup-easy-2-s">A_GuiY</span>
+                で食い違いが生じる様です。
+            </p>
+        </div>
+        <p class="p-sub">
+            この問題があるので
+            <span class="thisword-s">mousePlug</span>
+            はちゃんと機能しないようになります。
+        </p>
+        <div class="slideWrap-Wrap">
+            <div class="slideWrap slide-detail">
+                <p class="slideTitle t-slide-detail">
+                    もう少し細かく言うと
+                </p>
+                <div class="slideViewContent">
+                    <p class="p-slideViewContent">
+                        <span class="pickup-easy-2-r">A_GuiX</span>
+                        と
+                        <span class="pickup-easy-2-s">A_GuiY</span>
+                        と、
+                        <span class="ahk-pickup-r">Gui</span>
+                        の
+                        <span class="autoHotkey">AHKコマンド</span>
+                        を使って指定する時の、Gui の大きさを表す数字が「拡大縮小のレイアウト」の設定の影響を受けるようです。
+                    </p>
+                    <p class="slideViewContent-next">
+                        続きを見る
+                    </p>
+                </div>
+                <div class="slideContent">
+                    <p class="p-slideContent">
+                        「拡大縮小のレイアウト」の設定が、<br />
+                        <span class="bold-bu spacePlus-r">拡大／縮小</span>
+                        <span class="pickup-easy-r">100&#37;</span>
+                    </p>
+                    <p class="p-sub">
+                        この状態なら影響はありません。
+                    </p>
+                    <div class="bundle">
+                        <p class="p-sub">
+                            逆にそれ以外の設定なら、
+                            <span class="pickup-easy-2-r">A_GuiX</span>
+                            と
+                            <span class="pickup-easy-2-s">A_GuiY</span>
+                            と、
+                            <span class="ahk-pickup-r">Gui</span>
+                            の
+                            <span class="autoHotkey">AHKコマンド</span>
+                            を使って指定する時の、Gui の大きさを表す数字に変化が生じるため
+                        </p>
+                        <p class="p-sub">
+                            <span class="ahk-pickup-r">WinMove</span>
+                            などのウインドウ系と、<br />
+                            <span class="ahk-pickup-r">MouseMove</span>
+                            などのマウス系の
+                            <span class="autoHotkey">AHKコマンド</span>
+                            で指定する時に使う位置などを表す数値と食い違いがでる様になります。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <noscript>
+                <div class="slideNoScript slide-detail">
+                    <div class="slideNoScript-caption">
+                        JavaScript が off になっている時
+                    </div>
+                    <details>
+                        <summary class="noscript-slideTitle t-slide-detail">
+                            もう少し細かく言うと
+                        </summary>
+                        <p class="p-sub">
+                            <span class="pickup-easy-2-r">A_GuiX</span>
+                            と
+                            <span class="pickup-easy-2-s">A_GuiY</span>
+                            と、
+                            <span class="ahk-pickup-r">Gui</span>
+                            の
+                            <span class="autoHotkey">AHKコマンド</span>
+                            を使って指定する時の、Gui の大きさを表す数字が「拡大縮小のレイアウト」の設定の影響を受けるようです。
+                        </p>
+                        <p class="p-sub">
+                            「拡大縮小のレイアウト」の設定が、<br />
+                            <span class="bold-bu spacePlus-r">拡大／縮小</span>
+                            <span class="pickup-easy-r">100&#37;</span>
+                        </p>
+                        <p class="p-sub">
+                            この状態なら影響はありません。
+                        </p>
+                        <div class="bundle">
+                            <p class="p-sub">
+                                逆にそれ以外の設定なら、
+                                <span class="pickup-easy-2-r">A_GuiX</span>
+                                と
+                                <span class="pickup-easy-2-s">A_GuiY</span>
+                                と、
+                                <span class="ahk-pickup-r">Gui</span>
+                                の
+                                <span class="autoHotkey">AHKコマンド</span>
+                                を使って指定する時の、Gui の大きさを表す数字に変化が生じるため
+                            </p>
+                            <p class="p-sub">
+                                <span class="ahk-pickup-r">WinMove</span>
+                                などのウインドウ系と、<br />
+                                <span class="ahk-pickup-r">MouseMove</span>
+                                などのマウス系の
+                                <span class="autoHotkey">AHKコマンド</span>
+                                で指定する時に使う位置などを表す数値と食い違いがでる様になります。
+                            </p>
+                        </div>
+                    </details>
+                </div>
+            </noscript>
+        </div>
+        <div class="div-section-one d-type-basic">
+            <div class="supplement">
+                <p class="p-sub">
+                    以上に挙げた問題が生じている場合、<br />
+                    メニューにある
+                    <span class="guiText-s">色を取得</span>
+                    の動作もうまくいきません。
+                </p>
+                <p class="p-sub">
+                    <span class="guiText-r">色を取得</span>
+                    は
+                    <span class="ahk-pickup-s">PixelGetColor</span>
+                    の
+                    <span class="autoHotkey">AHKコマンド</span>
+                    を使用して色の情報を取得しています。
+                </p>
+                <p class="p-sub">
+                    ですが「拡大縮小のレイアウト」の設定で、
+                    <span class="pickup-easy-r">100&#37;</span>
+                    以外を設定している場合では、<br />
+                    <span class="ahk-pickup-r">PixelGetColor</span>
+                    の X や Y の位置の数字と、
+                    <span class="ahk-pickup-r">MouseGetPos</span>
+                    で取得できる X や Y の位置に食い違いが生じるため、違う位置の情報を取得してしまいます。
+                </p>
+            </div>
+        </div><!--  div-section-one  -->
+        <div class="div-section-one d-type-basic">
+            <p class="p-sub">
+                この問題に対処する方法として分かっているのは以下の３つだけです。
+            </p>
+            <ol class="ol-circle">
+                <li>
+                    「拡大縮小のレイアウト」の、<br />
+                    <span class="bold-bu spacePlus-r">拡大／縮小</span>
+                    の設定が
+                    <span class="pickup-easy-r">100&#37;</span><br />
+                    のパソコンのみで
+                    <span class="thisword-s">mousePlug</span>
+                    を使う。
+                </li>
+                <li>
+                    「拡大縮小のレイアウト」の、<br />
+                    <span class="bold-bu spacePlus-r">拡大／縮小</span>
+                    の設定が
+                    <span class="pickup-easy-s">100&#37;</span><br />
+                    のパソコンのほうで、
+                    <abbr class="abbr-softName-r" title="TextRunRun">TRR</abbr>
+                    を起動させて、
+                    &#40;
+                    または、単体の
+                    <span class="thisword-s">mousePlug</span>
+                    を起動させて
+                    &#41;<br />
+                    その後に、
+                    <span class="bold-bu spacePlus-r">拡大／縮小</span>
+                    が
+                    <span class="pickup-easy-s">100&#37;</span>
+                    以外になるモニターに移行して使う。<br />
+                    &#40;
+                    または、
+                    <span class="pickup-easy-s">100&#37;</span>
+                    以外の設定に移行する。
+                    &#41;
+                </li>
+                <li>
+                    古めの
+                    <span class="filePath-pickup-s"><span class="autoHotkey">AutoHotkey</span>&#46;exe</span>
+                    を使う。
+                </li>
+            </ol>
+            <div class="bundle">
+                <p class="p-sub">
+                    とりあえず、解決策はこれだけです。
+                </p>
+                <p class="p-sub">
+                    これらを、もう少し以下に細かく書きます。
+                </p>
+            </div>
+        </div><!--  div-section-one  -->
+        <section id="title5_1" class="sectionSecond d-type-basic">
+            <h2 class="t-lank2">
+                拡大／縮小が
+                <span class="pickup-easy-s">100&#37;</span>
+                のパソコンで使う
+            </h2>
+            <p class="p-sub">
+                さっきから言っている、<br />
+                <span class="bold-bu spacePlus-r">拡大／縮小</span>
+                が
+                <span class="pickup-easy-s">100&#37;</span>
+                とは、<br />
+                Windows の「設定」の、「システム」→「ディスプレイ」を選ぶと登場する「拡大縮小のレイアウト」の設定に関する事です。
+            </p>
+            <div class="bundle">
+                <div class="img-div">
+                    <img src="image/mousePlugImg/dpiconfigwin11.png" class="img-w-400px" alt="画像">
+                    <p class="img-div-p">
+                        Windows 11 の設定ではこの様な画面で設定するやつです
+                    </p>
+                </div>
+            </div>
+            <div class="bundle">
+                <p class="p-sub">
+                    この
+                    <span class="bold-bu spacePlus-s">拡大／縮小</span>
+                    の設定が
+                    <span class="pickup-easy-s">100&#37;</span><br />
+                    であるなら、
+                    <span class="thisword-r">mousePlug</span>
+                    は問題なく使えます。
+                </p>
+                <p class="p-sub">
+                    ですが、
+                    <span class="pickup-easy-r">100&#37;</span>
+                    以外の設定にしている環境で使っている場合、
+                    <span class="thisword-r">mousePlug</span>
+                    で指定する数値とすれ違いが生じるため、想定した位置と違う位置で動作するといった事が起きます。
+                </p>
+            </div>
+            <div class="bundle">
+                <p class="p-sub">
+                    「別のモニターに繋いで、そのモニターで使う」といったことをすると、この
+                    <span class="bold-bu spacePlus-s">拡大／縮小</span>
+                    の設定は自動的に変更になったりします。<br />
+                    &#40;
+                    その場合、別のモニターに繋ぐのをやめると、自動的に設定が元に戻ったりする様です。
+                    &#41;
+                </p>
+            </div>
+            <div class="bundle">
+                <p class="p-sub">
+                    ですので、
+                    <span class="thisword-r">mousePlug</span>
+                    を使う時は、その事を気をつける必要がある事を知っておいてください。
+                </p>
+            </div>
+        </section><!-- sectionSecond -->
+        <section id="title5_2" class="sectionSecond d-type-basic">
+            <h2 class="t-lank2">
+                拡大／縮小が
+                <span class="pickup-easy-s">100&#37;</span>
+                のパソコンで、
+                TextRunRun
+                を起動させておき、その後モニターを変える
+            </h2>
+            <p class="p-sub">
+                <span class="bold-bu spacePlus-r">拡大／縮小</span>
+                の設定が
+                <span class="pickup-easy-s">100&#37;</span>
+                以外の設定のパソコンで使った場合は
+                <span class="thisword-s">mousePlug</span>
+                で食い違いが生じると書きました。
+            </p>
+            <p class="p-sub">
+                ですが、
+                <span class="bold-bu spacePlus-r">拡大／縮小</span>
+                の設定が
+                <span class="pickup-easy-s">100&#37;</span>
+                の設定の時に
+                <span class="softName-s">TextRunRun</span>
+                を起動させておくと
+                &#40;
+                または、単体の
+                <span class="thisword-s">mousePlug</span>
+                を起動させておくと
+                &#41;
+                、その食い違いは発生しない様です。
+            </p>
+            <p class="p-sub">
+                どうやら
+                <span class="bold-bu spacePlus-s">拡大／縮小</span>
+                の設定が
+                <span class="pickup-easy-s">100&#37;</span>
+                以外の時に、
+                <span class="autoHotkey">AutoHotkey</span>
+                を起動すると、
+                <span class="pickup-easy-2-r">A_GuiX</span>
+                と
+                <span class="pickup-easy-2-s">A_GuiY</span>
+                と、
+                <span class="ahk-pickup-r">Gui</span>
+                による位置や大きさの数字が普通の時と食い違うという事が起きるようです。
+            </p>
+            <p class="p-sub">
+                その後で、Windows の
+                <span class="bold-bu spacePlus-s">拡大／縮小</span>
+                の設定を
+                <span class="pickup-easy-s">100&#37;</span>
+                以外の設定に変更した場合は、
+                <span class="pickup-easy-2-r">A_GuiX</span>
+                と
+                <span class="pickup-easy-2-s">A_GuiY</span>
+                と、
+                <span class="ahk-pickup-r">Gui</span>
+                による位置や大きさの数字が普通の時と食い違うという事は起きません。
+            </p>
+            <p class="brackets">
+                それと同じく、モニターを変更して
+                <span class="bold-bu spacePlus-s">拡大／縮小</span>
+                の設定が
+                <span class="pickup-easy-s">100&#37;</span>
+                以外に自動的に変更されてしまっても、食い違いは発生しません。
+
+            </p>
+            <div class="supplement">
+                <p class="p-sub">
+                    <span class="bold-bu spacePlus-s">拡大／縮小</span>
+                    の設定が
+                    <span class="pickup-easy-s">100&#37;</span>
+                    以外の環境の時に<br />
+                    <span class="input-easy-r"><span class="ahkComm">Reload</span></span>
+                    を使って再起動すると、
+                    <span class="pickup-easy-2-r">A_GuiX</span>
+                    と
+                    <span class="pickup-easy-2-s">A_GuiY</span>
+                    と
+                    <span class="ahk-pickup-s">Gui</span>
+                    の位置や大きさがおかしくなる問題がまた起きます。
+                </p>
+            </div>
+            <div class="bundle">
+                <p class="p-sub">
+                    なのであくまで、どの設定の時に
+                    <abbr class="abbr-softName-s" title="TextRunRun">TRR</abbr>
+                    を
+                    &#40;
+                    または、単体の
+                    <span class="thisword-s">mousePlug</span>
+                    を
+                    &#41;
+                    起動させたかどうかで影響があるので、<br />
+                    <span class="bold-bu spacePlus-r">拡大／縮小</span>
+                    の設定が
+                    <span class="pickup-easy-s">100&#37;</span>
+                    の時に起動させておくという対処法があります。
+                </p>
+            </div>
+        </section><!-- sectionSecond -->
+        <section id="title5_3" class="sectionSecond d-type-basic">
+            <h2 class="t-lank2">
+                古めの
+                AutoHotkey&#46;exe
+                を使う
+            </h2>
+            <p class="p-sub">
+                古い
+                <span class="autoHotkey">AutoHotkey</span>
+                だと、この問題が起きない様です。
+            </p>
+            <p class="p-sub">
+                そう言いたいところですが、かなり古いバージョンの話になるのであまり現実的ではなかったりします。
+            </p>
+            <p class="p-sub">
+                <cite class="webtitle-r">AutoHotkey</cite>
+                のホームぺージで配布してあるもので一番古いものでも
+            </p>
+            <p class="p-sub">
+                <span class="othersoft-r">AutoHotkey112207</span>
+                &#40;
+                <span class="pickup-easy-r">1.1.22.07</span>
+                のバージョン
+                &#41;<br />
+                <span class="pickup-easy-r">2015年</span>製のもの
+            </p>
+            <p class="p-sub">
+                が一番古い様です。
+            </p>
+            <p class="p-sub">
+                残念な事に、これでもまだその<br />
+                「<span class="bold-bu spacePlus-r">拡大／縮小</span>
+                の設定が
+                <span class="pickup-easy-s">100&#37;</span>
+                以外の時に
+                <span class="pickup-easy-2-r">A_GuiX</span>
+                と
+                <span class="pickup-easy-2-s">A_GuiY</span>
+                と
+                <span class="ahk-pickup-s">Gui</span>
+                の位置や大きさがおかしくなる問題」<br />
+                が起きます。
+            </p>
+            <p class="p-sub">
+                ここでいう古いバージョンはもっと古いものになってしまいます。
+            </p>
+            <div class="othercite-page-wrap d-type-basic">
+                <div class="bundle-no-bottom">
+                    <p class="p-sub">
+                        <cite class="webtitle-r">AutoHotkey</cite>
+                        の Webサイト のリンクを一応、ここに貼っておきます。
+                    </p>
+                </div>
+                <div class="othercite-page d-type-small">
+                    <div class="othercite-page-caption">
+                        外様のWebサイト
+                    </div>
+                    <div class="othercite-page-preface">
+                        <p class="p-sub-no-margin">
+                            この
+                            <cite class="webtitle-s">AutoHotkey</cite>
+                            は、このホームページとは全く関係のない別のWebサイトです。
+                        </p>
+                    </div>
+                    <p class="p-sub">
+                        <a href="https://www.autohotkey.com/" target="_blank" class="othersite-link-r"><cite>AutoHotkey</cite></a>
+                    </p>
+                </div>
+            </div>
+            <div class="bundle">
+                <p class="p-sub">
+                    古い
+                    <span class="autoHotkey">AutoHotkey</span>
+                    だと、この問題が起きないと書きましたが
+                </p>
+                <p class="p-sub">
+                    <span class="othersoft-r">AutoHotkey</span>
+                    の
+                    <span class="pickup-easy-r">1.1.9.3</span>
+                    のバージョン<br />
+                    &#40;
+                    何年製のものかは分かりません
+                    &#41;
+                </p>
+                <p class="p-sub">
+                    このバージョンだと、<br />
+                    「<span class="pickup-easy-2-r">A_GuiX</span>
+                    と
+                    <span class="pickup-easy-2-s">A_GuiY</span>
+                    と
+                    <span class="ahk-pickup-s">Gui</span>
+                    の位置や大きさがおかしくなる問題」<br />
+                    が起きない事が分かっています。
+                </p>
+            </div>
+            <p class="p-sub">
+                ただし、入手方法は分かりません。<br />
+                紹介だけしておいて何ですが、古いバージョンを薦めるのもやはりおかしな話なのでおすすめする方法ではない事も言っておきます。
+            </p>
+            <div class="particular-page inner d-type-small">
+                <p class="p-sub">
+                    これと似た様な事を書いているページがあります。
+                </p>
+                <p class="p-sub">
+                    古めの
+                    <span class="autoHotkey">AutoHotkey</span>
+                    を使う際の事も書いています。
+                </p>
+                <p class="p-sub">
+                    ただし、ここで説明した事の繰り返しになるだけであり、以下のページを読んでも解決策が書かれている訳ではないのでご了承ください。
+                </p>
+                <div class="div-trrpage inner d-type-small">
+                    <p class="t-div-trrpage">
+                        TextRunRunのWebサイト
+                    </p>
+                    <p class="p-sub">
+                        <span class="breadway-link">
+                            <span class="breadway-elem">
+                                <span class="trrhomepage spacePlus-r"><a href="https://textrunrunburanbon.com">TextRunRunの説明を見るページ</a></span>
+                            </span><br />
+                            <span class="breadway-elem"><span class="detailPage">細かい説明</span></span>
+                            <a href="https://textrunrunburanbon.com/page/detail/source/oldnewahk.php" target="_blank" class="blank-siteword">TRRの起動時に使うファイルの違い</a>
+                            <span class="breadway-thispage">
+                                <a href="https://textrunrunburanbon.com/page/detail/source/oldnewahk.php#newolddiff" target="_blank" class="blank-siteword">new と old の違い</a>
+                            </span>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </section><!-- sectionSecond -->
+    </section><!-- sectionFirst -->
+
+    <div class="div-section-one d-type-basic">
+        <div class="pagination1 d-type-small-basic">
+            <a href="index.html" class="p1-prev">前へ</a>
+            <a href="#" class="p1-next hidden-bu">次へ</a>
+        </div>
+        <nav class="categorylinks">
+            <div class="categorylinks-title">
+                <span class="span-categorylinks-title">mousePlugの関連</span>
+            </div>
+            <ul class="ul-categorylinks-row">
+                <li><a href="index.html">その<span class="numeral">1</span></a></li>
+                <li class="categorylinks-current">その<span class="numeral">2</span></li>
+            <li><a href="mousePlugDict.html">mousePlugの変数・関数・サブルーチン</a></li>
+            </ul>
+        </nav>
+    </div><!--  div-section-one  -->
+
+
+</div><!-- width-short -->
+
+</article>
+
+</main>
+
+    <div id="edgeMenuArea">
+        <nav class="nav-side">
+            <div class="edgeAreaSpace">
+                <p class="p-sub">
+                    何かに使うかもしれないサイドエリア
+                </p>
+            </div>
+        </nav>
+        
+    </div><!-- edgeMenuArea -->
+
+</div><!-- page-contents -->
+
+<footer id="footer-wrapper">
+    <div id="footer-trrpage">
+        <div class="footer-trrpage-block">
+            <div class="footer-trrpage-caption">
+                作者ブランボンのホームページ：
+            </div>
+            <div class="footer-trrpagelink">
+                <p class="footer-trrpagelink-p">
+                    <span class="trrhomepage spacePlus-r"><a href="https://textrunrunburanbon.com">TextRunRunの説明を見るページ</a></span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="footer-buranbon">
+        <small id="small-footer-buranbon"><span id="in-footer-buranbon">Copyright &copy; ブランボン</span></small>
+    </div>
+</footer>
+
+    <div id="div-pageTop-oth">
+        <a href="#pagetop-first" class="a-pageTop-oth"><span class="span-pageTop-up-oth">↑</span></a>
+    </div>
+
+    <button id="anywhere-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <nav id="anywhere-menu">
+        <ul class="ul-index-preface">
+            <li>
+                <a href="#title_preface">前書き</a>
+            </li>
+        </ul>
+        <ul class="ul-index-thispage">
+            <li>
+                <a href="#title1">色を取得</a>
+            </li>
+            <li>
+                <a href="#title2">スクリプトで使う</a>
+            </li>
+            <li>
+                <a href="#title3">option&#46;txt</a>
+                <ul class="ul-index-thispage-2">
+                    <li>
+                        <a href="#title3_1">fontSize</a>
+                    </li>
+                    <li>
+                        <a href="#title3_2">fontName</a>
+                    </li>
+                    <li>
+                        <a href="#title3_3">fontSizeSmall</a>
+                    </li>
+                    <li>
+                        <a href="#title3_4">fontSizeTab</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#title4">単体で使う</a>
+                <ul class="ul-index-thispage-2">
+                    <li>
+                        <a href="#title4_1">icon&#46;ico</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#title5">モニターの大きさの違いなどによる問題</a>
+                <ul class="ul-index-thispage-2">
+                    <li>
+                        <a href="#title5_1">
+                            拡大／縮小が
+                            <span class="pickup-easy-s">100&#37;</span>
+                            のパソコンで使う
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#title5_2">
+                            拡大／縮小が
+                            <span class="pickup-easy-s">100&#37;</span>
+                            のパソコンで、
+                            TextRunRun
+                            を起動させておき、その後モニターを変える
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#title5_3">
+                            古めの
+                            AutoHotkey&#46;exe
+                            を使う
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+</div><!-- allContents -->
+</body>
+</html>

@@ -1,0 +1,2421 @@
+@charset "utf-8";
+
+
+
+/*
+:root{
+    --ahk-color: #2ebc46;
+    --ahkScript-color: #36b936;
+    --var-color: #64749B;
+    --varpercent-color: #4D83D1;
+    --c-language-color: #2E36B9;
+    --dbQuoute-color: #800040;
+    --ahkComment-color: #83c974;
+    --filepath-color: #936400;
+    --filepath-bg: #FFFFE8;
+    --filepath-border: #F0F70F;
+    --introduction-color: #93CCF0;
+    --basis-color: #5D9BFF;
+    --detail-color: #FF8800;
+    --maniac-color: #E083E0;
+    --dict-color: #B9B274;
+    --ahkteach-color: #3ed16c;
+    --detail-supplement-color: #FFD864;
+
+
+    --word-spacing-input: 5px;
+
+commonCssbu.css の --bu-font-family-softname と同じ
+    --font-family-softname: 'BIZ UDPゴシック','メイリオ',Meiryo,'Segoe UI',Calibri,Arial,Sans-Serif;
+commonCssbu.css の --bu-font-family-input と同じ
+    --font-family-input: 'メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    --font-family-en-only: 'VL Pゴシック','メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    --font-family-title: 'VL Pゴシック','メイリオ',Meiryo,'Segoe UI',Calibri,Arial,Sans-Serif;
+    --font-family-button: 'メイリオ',Meiryo,'Segoe UI',Calibri,Arial,Sans-Serif;
+    --font-family-bgblock: 'メイリオ',Meiryo,'Segoe UI',Calibri,Arial,Sans-Serif;
+
+    --bu-link-focus: #f90;
+}
+*/
+
+
+/*----------------------
+全体
+----------------------*/
+
+.articleClass {
+    margin-bottom: 5px;
+    margin-right: 10px;
+    margin-left: 5px;
+
+    padding-top: 50px;
+    padding-right: 20px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+
+    font-family: 'BIZ UDゴシック','メイリオ',Meiryo,'Segoe UI',Calibri,Arial,Sans-Serif;
+
+    background-color: #fff;
+    -moz-border-radius: 10px;/*for Firefox*/
+    -webkit-border-radius: 10px;/*for Safari and chrome*/
+    border-radius: 10px;
+
+}
+
+#mainId {
+    background-color: #000;
+}
+
+
+/*----------------------
+ trrの
+----------------------*/
+
+/*  テキスト上のショートカットキー  */
+kbd.ontextkey {
+    margin: 0 5px;
+    padding: 0 5px;
+    color: #2E00B9;
+    border: 1px solid #272E5D;
+}
+
+kbd.ontextkey-r {
+    margin-right: 5px;
+    padding: 0 5px;
+    color: #2E00B9;
+    border: 1px solid #272E5D;
+}
+
+/*  組み合わせキーの場合  */
+kbd.ontextkey-combi {
+    margin: 0 5px;
+    padding: 0 10px;
+    font-size: 1.1rem;
+    border: 1px solid #272E5D;
+}
+
+kbd.ontextkey-combi-r {
+    margin-right: 5px;
+    padding: 0 10px;
+    font-size: 1.1rem;
+    border: 1px solid #272E5D;
+}
+
+    /*  組み合わせキーの 1キー   テキスト上の場合 */
+    kbd.ontextkey-combi kbd.onekey,
+    kbd.ontextkey-combi-r kbd.onekey{
+        color: #2E00B9;
+        font-weight: normal;
+    }
+
+    /*  + の文字  */
+    kbd.ontextkey-combi span.plusofkey,
+    kbd.ontextkey-combi-r span.plusofkey{
+        padding: 0 5px;
+    }
+
+
+/*  常時使用のショートカットキー */
+kbd.keyAny {
+    margin: 0 5px;
+    padding: 0 5px;
+    color: #2EAA83;
+    border: 1px solid #272E5D;
+}
+
+kbd.keyAny-r {
+    margin-right: 5px;
+    padding: 0 5px;
+    color: #2EAA83;
+    border: 1px solid #272E5D;
+}
+
+kbd.keyAny-combi {
+    margin: 0 5px;
+    padding: 0 10px;
+    font-size: 1.1rem;
+    border: 1px solid #272E5D;
+}
+
+kbd.keyAny-combi-r {
+    margin-right: 5px;
+    padding: 0 10px;
+    font-size: 1.1rem;
+    border: 1px solid #272E5D;
+}
+
+    /*  組み合わせキーの 1キー   常時使用キーの場合 */
+    kbd.keyAny-combi kbd.onekey,
+    kbd.keyAny-combi-r kbd.onekey{
+        color: #2EAA83;
+        font-weight: normal;
+    }
+
+    /*  + の文字  */
+    kbd.keyAny-combi span.plusofkey,
+    kbd.keyAny-combi-r span.plusofkey{
+        padding: 0 5px;
+    }
+
+/*  ただのkbd  */
+kbd.inputKbd {
+    padding: 0;
+    font-family: inherit;
+    color: #0F004D;
+}
+
+/*  ただのkbd。pre表示  */
+kbd.inputKbd-pre {
+    padding: 0;
+    font-family: inherit;
+    color: #0F004D;
+    white-space: pre;
+}
+
+/*  入力の例用。一行でのみ使う。 code自体をブロックにして一つで済ます。  */
+code.inputCodeBox-pre {
+    display: block;
+    margin: 5px 20px 5px 0;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 2px solid #27C1A2;
+    background-color: #FFFFFF;
+    /* var(--font-family-en-only) */
+    font-family: 'VL Pゴシック','メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    line-height: 170%;
+    color: #0F004D;
+    /* var(--word-spacing-input) */
+    word-spacing: 5px;
+    white-space: pre;
+    overflow: auto;
+}
+
+/*  入力の例用の  複数行  */
+div.inputBox {
+    padding: 10px;
+    /* var(--font-family-input) */
+    font-family: 'メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    line-height: 170%;
+    color: #0F004D;
+    /* var(--word-spacing-input) */
+    word-spacing: 5px;
+    border: 2px solid #27C1A2;
+    background-color: #FFFFFF;
+    overflow: auto;
+}
+
+/*
+    基本使わない。スクロールするかどうかは、srcCode-pre を使うかどうかによるから。
+div.inputBox-sidescroll {
+    padding: 10px;
+    
+    font-family: 'メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    line-height: 170%;
+    color: #0F004D;
+    
+    word-spacing: 5px;
+    border: 2px solid #27C1A2;
+    background-color: #FFFFFF;
+    overflow-x: auto;
+}
+*/
+
+/*  入力の例用  一行。スクロールするかどうかは pre を使うかどうか */
+div.inputOneLine {
+    padding-left: 2.5em;
+    padding-right: 10px;
+    text-indent: -2em;
+
+    /* var(--font-family-input) */
+    font-family: 'メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    color: #0F004D;
+    /* var(--word-spacing-input) */
+    word-spacing: 5px;
+    border: 2px solid #27C1A2;
+    background-color: #FFFFFF;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    overflow: auto;
+}
+
+/*  入力の例用のボックスで説明。一行の分を折り返しで表示 */
+div.inputOneLine-noscroll{
+    padding-left: 2.5em;
+    padding-right: 10px;
+    text-indent: -2em;
+
+    /* var(--font-family-input) */
+    font-family: 'メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    color: #0F004D;
+    /* var(--word-spacing-input) */
+    word-spacing: 5px;
+    border: 2px solid #27C1A2;
+    background-color: #FFFFFF;
+    word-break: break-all;
+}
+
+/*-----------------
+ 簡単な入力欄。
+-----------------*/
+
+/*  入力欄。inputOnelineのインライン  */
+span.inputinline-s{
+    display: inline-block;
+    margin: 0 5px;
+    padding-left: 2.5em;
+    padding-right: 10px;
+    text-indent: -2em;
+
+    /* var(--font-family-input) */
+    font-family: 'メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    line-height: 2em;
+    color: #0F004D;
+    /* var(--word-spacing-input) */
+    word-spacing: 5px;
+    border: 2px solid #27C1A2;
+    background-color: #FFFFFF;
+    word-break: break-all;
+}
+
+span.inputinline-r{
+    display: inline-block;
+    margin-right: 5px;
+    padding-left: 2.5em;
+    padding-right: 10px;
+    text-indent: -2em;
+
+    /* var(--font-family-input) */
+    font-family: 'メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    line-height: 2em;
+    color: #0F004D;
+    /* var(--word-spacing-input) */
+    word-spacing: 5px;
+    border: 2px solid #27C1A2;
+    background-color: #FFFFFF;
+    word-break: break-all;
+}
+
+/*  入力欄。inputOnelineのインライン。kbdで  */
+kbd.inputinline-kbd-s{
+    display: inline-block;
+    margin: 0 5px;
+    /*  bootstrap 対策  */
+    padding-top: 0;
+    padding-bottom: 0;
+
+    padding-left: 2.5em;
+    padding-right: 10px;
+    text-indent: -2em;
+
+    /* var(--font-family-input) */
+    font-family: 'メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    font-size: 18px;
+    line-height: 2em;
+    color: #0F004D;
+    /* var(--word-spacing-input) */
+    word-spacing: 5px;
+    border: 2px solid #27C1A2;
+    background-color: #FFFFFF;
+    border-radius: 0;
+    word-break: break-all;
+}
+
+kbd.inputinline-kbd-r{
+    display: inline-block;
+    margin-right: 5px;
+    /*  bootstrap 対策  */
+    padding-top: 0;
+    padding-bottom: 0;
+
+    padding-left: 2.5em;
+    padding-right: 10px;
+    text-indent: -2em;
+
+    /* var(--font-family-input) */
+    font-family: 'メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    font-size: 18px;
+    line-height: 2em;
+    color: #0F004D;
+    /* var(--word-spacing-input) */
+    word-spacing: 5px;
+    border: 2px solid #27C1A2;
+    background-color: #FFFFFF;
+    border-radius: 0;
+    word-break: break-all;
+}
+
+/*  入力欄。inputOnelineのインライン。kbdで pre表示  */
+kbd.inputinline-kbd-pre-s{
+    display: inline-block;
+    margin: 0 5px;
+    /*  bootstrap 対策  */
+    padding-top: 0;
+    padding-bottom: 0;
+
+    padding-left: 2.5em;
+    padding-right: 10px;
+    text-indent: -2em;
+
+    /* var(--font-family-input) */
+    font-family: 'メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    font-size: 18px;
+    line-height: 2em;
+    color: #0F004D;
+    /* var(--word-spacing-input) */
+    word-spacing: 5px;
+    border: 2px solid #27C1A2;
+    background-color: #FFFFFF;
+    white-space: pre;
+    border-radius: 0;
+}
+
+kbd.inputinline-kbd-pre-r{
+    display: inline-block;
+    margin-right: 5px;
+    /*  bootstrap 対策  */
+    padding-top: 0;
+    padding-bottom: 0;
+
+    padding-left: 2.5em;
+    padding-right: 10px;
+    text-indent: -2em;
+
+    /* var(--font-family-input) */
+    font-family: 'メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    font-size: 18px;
+    line-height: 2em;
+    color: #0F004D;
+    /* var(--word-spacing-input) */
+    word-spacing: 5px;
+    border: 2px solid #27C1A2;
+    background-color: #FFFFFF;
+    white-space: pre;
+    border-radius: 0;
+}
+
+/*  入力欄。inputOnelineのインライン。codeで  */
+code.inputinline-code-s{
+    display: inline-block;
+    margin: 0 5px;
+
+    padding-left: 2.5em;
+    padding-right: 10px;
+    text-indent: -2em;
+
+    /* var(--font-family-input) */
+    font-family: 'メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    font-size: 18px;
+    line-height: 2em;
+    color: #0F004D;
+    /* var(--word-spacing-input) */
+    word-spacing: 5px;
+    border: 2px solid #27C1A2;
+    background-color: #FFFFFF;
+    word-break: break-all;
+}
+
+code.inputinline-code-r{
+    display: inline-block;
+    margin-right: 5px;
+
+    padding-left: 2.5em;
+    padding-right: 10px;
+    text-indent: -2em;
+
+    /* var(--font-family-input) */
+    font-family: 'メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    font-size: 18px;
+    line-height: 2em;
+    color: #0F004D;
+    /* var(--word-spacing-input) */
+    word-spacing: 5px;
+    border: 2px solid #27C1A2;
+    background-color: #FFFFFF;
+    word-break: break-all;
+}
+
+/*  入力欄。inputOnelineのインライン。codeで pre表示  */
+code.inputinline-code-pre-s{
+    display: inline-block;
+    margin: 0 5px;
+
+    padding-left: 2.5em;
+    padding-right: 10px;
+    text-indent: -2em;
+
+    /* var(--font-family-input) */
+    font-family: 'メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    font-size: 18px;
+    line-height: 2em;
+    color: #0F004D;
+    /* var(--word-spacing-input) */
+    word-spacing: 5px;
+    border: 2px solid #27C1A2;
+    background-color: #FFFFFF;
+    white-space: pre;
+}
+
+code.inputinline-code-pre-r{
+    display: inline-block;
+    margin-right: 5px;
+
+    padding-left: 2.5em;
+    padding-right: 10px;
+    text-indent: -2em;
+
+    /* var(--font-family-input) */
+    font-family: 'メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    font-size: 18px;
+    line-height: 2em;
+    color: #0F004D;
+    /* var(--word-spacing-input) */
+    word-spacing: 5px;
+    border: 2px solid #27C1A2;
+    background-color: #FFFFFF;
+    white-space: pre;
+}
+
+/*  入力欄。inputOnelineのインライン。sampで  */
+samp.inputinline-samp-s{
+    display: inline-block;
+    margin: 0 5px;
+
+    padding-left: 2.5em;
+    padding-right: 10px;
+    text-indent: -2em;
+
+    /* var(--font-family-input) */
+    font-family: 'メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    font-size: 18px;
+    line-height: 2em;
+    color: #0F004D;
+    /* var(--word-spacing-input) */
+    word-spacing: 5px;
+    border: 2px solid #27C1A2;
+    background-color: #FFFFFF;
+    word-break: break-all;
+}
+
+samp.inputinline-samp-r{
+    display: inline-block;
+    margin-right: 5px;
+
+    padding-left: 2.5em;
+    padding-right: 10px;
+    text-indent: -2em;
+
+    /* var(--font-family-input) */
+    font-family: 'メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    font-size: 18px;
+    line-height: 2em;
+    color: #0F004D;
+    /* var(--word-spacing-input) */
+    word-spacing: 5px;
+    border: 2px solid #27C1A2;
+    background-color: #FFFFFF;
+    word-break: break-all;
+}
+
+/*-----------------
+入力欄例を目立たせる。
+-----------------*/
+
+/*  簡単な入力例で目立たせる。 spanで */
+span.input-easy-s{
+    margin: 0 5px;
+    padding: 0 7px;
+    /* var(--font-family-input) */
+    font-family: 'メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    /* var(--word-spacing-input) */
+    word-spacing: 5px;
+    border: 2px solid #00BBDD;
+    background-color: #FFFFFF;
+    word-break: break-all;
+}
+
+span.input-easy-r{
+    margin-right: 5px;
+    padding: 0 7px;
+    /* var(--font-family-input) */
+    font-family: 'メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    /* var(--word-spacing-input) */
+    word-spacing: 5px;
+    border: 2px solid #00BBDD;
+    background-color: #FFFFFF;
+    word-break: break-all;
+}
+
+/*  簡単な入力例で目立たせる。 kbdで */
+kbd.input-easy-kbd-s{
+    margin: 0 5px;
+    /*  bootstrap 対策 上下のpadding */
+    padding: 0 7px;
+    /* var(--font-family-input) */
+    font-family: 'メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    /* var(--word-spacing-input) */
+    word-spacing: 5px;
+    border: 2px solid #00BBDD;
+    background-color: #FFFFFF;
+    border-radius: 0;
+    word-break: break-all;
+}
+
+kbd.input-easy-kbd-r{
+    margin-right: 5px;
+    /*  bootstrap 対策 上下のpadding */
+    padding: 0 7px;
+    /* var(--font-family-input) */
+    font-family: 'メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    /* var(--word-spacing-input) */
+    word-spacing: 5px;
+    border: 2px solid #00BBDD;
+    background-color: #FFFFFF;
+    border-radius: 0;
+    word-break: break-all;
+}
+
+/*  簡単な入力例で目立たせる。 codeで */
+code.input-easy-code-s{
+    margin: 0 5px;
+    padding: 0 7px;
+    /* var(--font-family-input) */
+    font-family: 'メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    /* var(--word-spacing-input) */
+    word-spacing: 5px;
+    border: 2px solid #00BBDD;
+    background-color: #FFFFFF;
+    word-break: break-all;
+}
+
+code.input-easy-code-r{
+    margin-right: 5px;
+    padding: 0 7px;
+    /* var(--font-family-input) */
+    font-family: 'メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    /* var(--word-spacing-input) */
+    word-spacing: 5px;
+    border: 2px solid #00BBDD;
+    background-color: #FFFFFF;
+    word-break: break-all;
+}
+
+/*-----------------
+code や samp
+-----------------*/
+
+/*  kbd の中で code を使う場合  */
+kbd code.srcCode {
+
+}
+
+/*  ただのcode  */
+code.srcCode {
+    font-family: inherit;
+    color: #0F004D;
+}
+
+/*  ただのcode。pre表示  */
+code.srcCode-pre {
+    font-family: inherit;
+    color: #0F004D;
+    white-space: pre;
+}
+
+/*  ただのsamp  */
+samp.outSamp{
+    font-family: inherit;
+    color: #0F004D;
+}
+
+/*  ただのsamp。pre表示  */
+samp.outSamp-pre{
+    font-family: inherit;
+    color: #0F004D;
+    white-space: pre;
+}
+
+/*  ファイル名とソースコードのセットで  */
+.filesrc{
+    /*  上下のマージンは d-type で指定する  */
+/*
+    margin-top: 20px;
+    margin-bottom: 20px;
+*/
+}
+
+.filesrc-filename{
+    width: 400px;
+    margin-bottom: 0;
+    margin-left: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 0;
+    font-size: 25px;
+    /* var(--filepath-color) */
+    color: #936400;
+    /* var(--filepath-border) */
+    border-top: 3px solid #F0F70F;
+    border-right: 3px solid #F0F70F;
+    border-left: 3px solid #F0F70F;
+
+
+    /* var(--filepath-bg) */
+    background-color: #FFFFE8;
+
+    -moz-border-top-left-radius: 10px;
+    -webkit-border-top-left-radius: 10px;
+    -moz-border-top-right-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    behavior: url(../itemCss/border-radius.htc);
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+/*    user-select: all;*/
+}
+
+/*  今は inputbox と同じ  */
+div.file-inputbox{
+    margin-top: 0;
+    /*    margin-right: 10px;*/
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* var(--font-family-input) */
+    font-family: 'メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    font-size: 18px;
+    color: #0F004D;
+    /* var(--word-spacing-input) */
+    word-spacing: 5px;
+    /* var(--filepath-border) */
+    border: 3px solid #F0F70F;
+    background-color: #FFFFFF;
+    overflow: auto;
+    /*    user-select: all;*/
+}
+
+/*  一行の場合  */
+div.file-inputoneline{
+    margin-top: 0;
+    margin-right: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2.5em;
+    padding-right: 10px;
+    text-indent: -2em;
+
+    /* var(--font-family-input) */
+    font-family: 'メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    font-size: 18px;
+    color: #0F004D;
+    /* var(--word-spacing-input) */
+    word-spacing: 5px;
+    /* var(--filepath-border) */
+    border: 3px solid #F0F70F;
+    background-color: #FFFFFF;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    overflow: auto;
+    /*    user-select: all;*/
+}
+
+/*  互換性のためそのまま  */
+code.filesrc-inputbox{
+    display: block;
+    margin-top: 0;
+/*    margin-right: 10px;*/
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 10px;
+    /* var(--filepath-border) */
+    border: 3px solid #F0F70F;
+    background-color: #FFFFFF;
+    /* var(--font-family-input) */
+    font-family: 'メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    font-size: 18px;
+    color: #0F004D;
+    /* var(--word-spacing-input) */
+    word-spacing: 5px;
+    overflow: auto;
+    /*    user-select: all;*/
+}
+
+/*  一行の場合。互換性のためそのまま  */
+code.filesrc-inputoneline{
+    display: block;
+    margin-top: 0;
+    margin-right: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2.5em;
+    padding-right: 10px;
+    text-indent: -2em;
+
+    /* var(--filepath-border) */
+    border: 3px solid #F0F70F;
+    background-color: #FFFFFF;
+    /* var(--font-family-input) */
+    font-family: 'メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    font-size: 18px;
+    color: #0F004D;
+    /* var(--word-spacing-input) */
+    word-spacing: 5px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    overflow: auto;
+    /*    user-select: all;*/
+}
+
+var.varName {
+    /* var(--ahk-color) */
+/*    color: #64749B;*/
+}
+
+var.varName-s {
+    margin: 0 7px;
+    /* var(--ahk-color) */
+/*    color: #64749B;*/
+}
+
+var.varName-r {
+    margin-right: 7px;
+    /* var(--ahk-color) */
+/*    color: #64749B;*/
+}
+
+/* %%で囲んだ変数 */
+span.varPercent {
+    /* var(--varpercent-color) */
+    color: #4D83D1;
+}
+
+span.softName {
+    /* var(--font-family-softname) */
+    font-family: 'BIZ UDPゴシック','メイリオ',Meiryo,'Segoe UI',Calibri,Arial,Sans-Serif;
+    color: #3ea2e8;
+}
+
+span.softName-s {
+    /* var(--font-family-softname) */
+    font-family: 'BIZ UDPゴシック','メイリオ',Meiryo,'Segoe UI',Calibri,Arial,Sans-Serif;
+    color: #3ea2e8;
+    margin: 0 7px;
+}
+
+span.softName-r {
+    /* var(--font-family-softname) */
+    font-family: 'BIZ UDPゴシック','メイリオ',Meiryo,'Segoe UI',Calibri,Arial,Sans-Serif;
+    color: #3ea2e8;
+    margin-right: 7px;
+}
+
+abbr.abbr-softName {
+    /* var(--font-family-softname) */
+    font-family: 'BIZ UDPゴシック','メイリオ',Meiryo,'Segoe UI',Calibri,Arial,Sans-Serif;
+    color: #3ea2e8;
+    cursor: auto;
+    text-decoration: none;
+}
+
+abbr.abbr-softName-s {
+    /* var(--font-family-softname) */
+    font-family: 'BIZ UDPゴシック','メイリオ',Meiryo,'Segoe UI',Calibri,Arial,Sans-Serif;
+    color: #3ea2e8;
+    margin: 0 7px;
+    cursor: auto;
+    text-decoration: none;
+}
+
+abbr.abbr-softName-r {
+    /* var(--font-family-softname) */
+    font-family: 'BIZ UDPゴシック','メイリオ',Meiryo,'Segoe UI',Calibri,Arial,Sans-Serif;
+    color: #3ea2e8;
+    margin-right: 7px;
+    cursor: auto;
+    text-decoration: none;
+}
+
+/* AutoHotkey の文字 */
+.autoHotkey {
+    /* var(--font-family-softname) */
+    font-family: 'BIZ UDPゴシック','メイリオ',Meiryo,'Segoe UI',Calibri,Arial,Sans-Serif;
+    /* var(--ahk-color) */
+    color: #2ebc46;
+}
+
+.autoHotkey-s {
+    /* var(--font-family-softname) */
+    font-family: 'BIZ UDPゴシック','メイリオ',Meiryo,'Segoe UI',Calibri,Arial,Sans-Serif;
+    /* var(--ahk-color) */
+    color: #2ebc46;
+    margin: 0 7px;
+}
+
+.autoHotkey-r {
+    /* var(--font-family-softname) */
+    font-family: 'BIZ UDPゴシック','メイリオ',Meiryo,'Segoe UI',Calibri,Arial,Sans-Serif;
+    /* var(--ahk-color) */
+    color: #2ebc46;
+    margin-right: 7px;
+}
+
+/* AHKの文字を。abbrで */
+abbr.abbr-ahk {
+    /* var(--font-family-softname) */
+    font-family: 'BIZ UDPゴシック','メイリオ',Meiryo,'Segoe UI',Calibri,Arial,Sans-Serif;
+    /* var(--ahk-color) */
+    color: #2ebc46;
+    cursor: auto;
+    text-decoration: none;
+}
+
+abbr.abbr-ahk-s {
+    /* var(--font-family-softname) */
+    font-family: 'BIZ UDPゴシック','メイリオ',Meiryo,'Segoe UI',Calibri,Arial,Sans-Serif;
+    /* var(--ahk-color) */
+    color: #2ebc46;
+    margin: 0 7px;
+    cursor: auto;
+    text-decoration: none;
+}
+
+abbr.abbr-ahk-r {
+    /* var(--font-family-softname) */
+    font-family: 'BIZ UDPゴシック','メイリオ',Meiryo,'Segoe UI',Calibri,Arial,Sans-Serif;
+    /* var(--ahk-color) */
+    color: #2ebc46;
+    margin-right: 7px;
+    cursor: auto;
+    text-decoration: none;
+}
+
+/* ahkのコマンド */
+span.ahkComm {
+    font-size: 1.1em;
+    /* var(--ahkScript-color) */
+    color: #36b936;
+}
+
+span.ahkComm-s {
+    font-size: 1.1em;
+    /* var(--ahkScript-color) */
+    color: #36b936;
+    margin: 0 7px;
+}
+
+span.ahkComm-r {
+    font-size: 1.1em;
+    /* var(--ahkScript-color) */
+    color: #36b936;
+    margin-right: 7px;
+}
+
+/* ahkのコマンドを目立たせる */
+span.ahk-pickup-s {
+    margin: 0 7px;
+    padding: 3px 7px;
+    font-size: 1.1em;
+    /* var(--ahkScript-color) */
+    color: #36b936;
+    border: 1px solid #00BBDD;
+    background-color: #FFFFFF;
+}
+
+span.ahk-pickup-r {
+    margin-right: 7px;
+    padding: 3px 7px;
+    font-size: 1.1em;
+    /* var(--ahkScript-color) */
+    color: #36b936;
+    border: 1px solid #00BBDD;
+    background-color: #FFFFFF;
+}
+
+/*  規定のコマンド  */
+span.alreadyComm {
+    color: #27B2D8;
+}
+
+span.alreadyComm-s {
+    color: #27B2D8;
+    margin: 0 7px;
+}
+
+span.alreadyComm-r {
+    color: #27B2D8;
+    margin-right: 7px;
+}
+
+/*  プログラム言語でよくある文字に  */
+span.c-language {
+    /* var(--c-language-color) */
+    color: #2E36B9;
+    /* var(--font-family-en-only) */
+    font-family: 'VL Pゴシック','メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    font-size: 1.1em;
+}
+
+/*  文字列の色  */
+span.dbQuoute {
+    /* var(--dbQuoute-color) */
+    color: #800040;
+}
+
+/*  コメント内の色  */
+span.commentAhk {
+    /* var(--ahkComment-color) */
+    color: #83c974;
+}
+
+/*  引数の説明で使う。目立たせる。定義リストのタイトルに近い  */
+span.argword{
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+span.argword-s{
+    margin: 0 7px;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+span.argword-r{
+    margin-right: 7px;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/*  ソースコード内の強調  */
+span.src-highlight{
+    background-color: #d0ffff;
+}
+
+/*--------------------------
+textRunRunの文字の色替え
+------------------------------*/
+
+/*  Guiのコントロールの文字をこの色に  */
+span.guiText {
+    color: #0F0F0F;
+    background-color: #F0F0F0;
+    padding: 3px 5px;
+}
+
+span.guiText-s {
+    color: #0F0F0F;
+    background-color: #F0F0F0;
+    padding: 3px 5px;
+    margin: 0 7px;
+}
+
+span.guiText-r {
+    color: #0F0F0F;
+    background-color: #F0F0F0;
+    padding: 3px 5px;
+    margin-right: 7px;
+}
+
+div.guiText-block{
+    color: #0F0F0F;
+    background-color: #F0F0F0;
+    padding: 5px 1em;
+}
+
+div.guiText-block-inline{
+    display: inline-block;
+    color: #0F0F0F;
+    background-color: #F0F0F0;
+    padding: 5px 1em;
+}
+
+span.guiTab-s{
+    border-bottom: 5px solid #9C9C9C;
+    border-bottom-style: inset;
+    margin-right: 7px;
+    margin-left: 7px;
+    word-break: keep-all;
+}
+
+span.guiTab-r{
+    border-bottom: 5px solid #9C9C9C;
+    border-bottom-style: inset;
+    margin-right: 7px;
+    word-break: keep-all;
+}
+
+span.guiTab-in{
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+    color: #0F0F0F;
+    background-color: #F0F0F0;
+
+    padding-top: 5px;
+    padding-bottom: 0;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    border: solid 1px #000000;
+    border-top-left-radius: 0.4em;
+    border-top-right-radius: 0.4em;
+}
+
+span.gui-color1{
+    color: orange;
+}
+
+/*  ウインドウタイトル名  */
+span.windowName {
+    color: #FF8B8B;
+}
+
+span.windowName-s {
+    color: #FF8B8B;
+    margin: 0 7px;
+}
+
+span.windowName-r {
+    color: #FF8B8B;
+    margin-right: 7px;
+}
+
+/*  textRunRunで定義した文字  */
+span.softDfn {
+    color: #00B2B2;
+}
+
+span.softDfn-s {
+    color: #00B2B2;
+    margin: 0 7px;
+}
+
+span.softDfn-r {
+    color: #00B2B2;
+    margin-right: 7px;
+}
+
+/*  アイテムの名前ということを強調する色  */
+span.itemName {
+    color: #E8A22E;
+}
+
+span.itemName-s {
+    color: #E8A22E;
+    margin: 0 7px;
+}
+
+span.itemName-r {
+    color: #E8A22E;
+    margin-right: 7px;
+}
+
+/*  ##で囲んだアイテム名  */
+span.itemSharp{
+    color: #E8A22E;
+}
+
+/*  メインのメニューにある場合の項目  */
+span.mainMenu {
+    color: #FF8B8B;
+    background-color: #F2F2F2;
+    border: 1px solid #0C0C0C;
+    padding: 3px 5px;
+}
+
+span.mainMenu-s {
+    color: #FF8B8B;
+    background-color: #F2F2F2;
+    border: 1px solid #0C0C0C;
+    padding: 3px 5px;
+    margin: 0 7px;
+}
+
+span.mainMenu-r {
+    color: #FF8B8B;
+    background-color: #F2F2F2;
+    border: 1px solid #0C0C0C;
+    padding: 3px 5px;
+    margin-right: 7px;
+}
+
+/*  ファイルパスならこの色  */
+span.filePath {
+    /* var(--filepath-color) */
+    color: #936400;
+}
+
+span.filePath-s {
+    /* var(--filepath-color) */
+    color: #936400;
+    margin: 0 7px;
+}
+
+span.filePath-r {
+    /* var(--filepath-color) */
+    color: #936400;
+    margin-right: 7px;
+}
+
+span.filePath-pickup-s{
+    margin: 0 7px;
+    padding: 0 7px;
+    /* var(--font-family-bgblock) */
+    font-family: 'メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    /* var(--filepath-color) */
+    color: #936400;
+    /* var(--filepath-border) */
+    border: 1px solid #F0F70F;
+    /* var(--filepath-bg) */
+    background-color: #FFFFE8;
+    word-break: break-all;
+}
+
+span.filePath-pickup-r{
+    margin-right: 7px;
+    padding: 0 7px;
+    /* var(--font-family-bgblock) */
+    font-family: 'メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+    /* var(--filepath-color) */
+    color: #936400;
+    /* var(--filepath-border) */
+    border: 1px solid #F0F70F;
+    /* var(--filepath-bg) */
+    background-color: #FFFFE8;
+    word-break: break-all;
+}
+
+.fromcommandword-gui{
+    color: #46D82E;
+    background-color: #F0F0F0;
+    padding: 0 5px;
+}
+
+.fromfilenameword-gui{
+    color: #FFB255;
+    background-color: #F0F0F0;
+    padding: 0 5px;
+}
+
+.fromtmpsaveword-gui{
+    color: #36A2FF;
+    background-color: #F0F0F0;
+    padding: 0 5px;
+}
+
+.introductionPage{
+    color: #39000F;
+    padding: 5px 10px;
+    /* var(--introduction-color) */
+    background-color: #93CCF0;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    behavior: url(../itemCss/border-radius.htc);
+}
+
+.basisPage{
+    color: #FFFFC1;
+    padding: 5px 10px;
+    /* var(--basis-color) */
+    background-color: #5D9BFF;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    behavior: url(../itemCss/border-radius.htc);
+}
+
+.detailPage{
+    color: #FFFFFF;
+    padding: 5px 10px;
+    /* var(--detail-color) */
+    background-color: #FF8800;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    behavior: url(../itemCss/border-radius.htc);
+}
+
+.maniacPage{
+    color: #FFFFFF;
+    padding: 5px 10px;
+    /* var(--maniac-color) */
+    background-color: #E083E0;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    behavior: url(../itemCss/border-radius.htc);
+}
+
+.dictPage{
+    color: #FFFFFF;
+    padding: 5px 10px;
+    /* var(--dict-color) */
+    background-color: #B9B274;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    behavior: url(../itemCss/border-radius.htc);
+}
+
+.pagetop-link a,
+.pagetop-link a:link,
+.pagetop-link a:visited{
+    color: inherit;
+    text-decoration: none;
+}
+
+    .pagetop-link a:hover,
+    .pagetop-link a:focus,
+    .pagetop-link a:active{
+        color: #F90;
+    }
+
+
+/*--------------------------
+以降、基本一行用のブロック
+------------------------------*/
+
+/*  ファイルパスのみを表示するブロック  */
+div.filePath-block {
+
+    padding-left: 10px;
+    padding-right: 10px;
+
+    /* var(--filepath-color) */
+    color: #936400;
+    /* var(--filepath-border) */
+    border: 1px solid #F0F70F;
+    /* var(--filepath-bg) */
+    background-color: #FFFFE8;
+    word-break: break-all;
+
+}
+
+/*  目立たせる  ブロックで */
+div.pickup-one {
+    margin-left: -20px;
+
+    padding: 1px 20px;
+    border: 2px solid #E8FFB7;
+
+    background-color: #FFFFF7;
+}
+
+/*  一行テキスト上の例  */
+div.text-example{
+    width: 23em;
+    padding-right: 0.5em;
+    padding-left: 2.5em;
+    padding-right: 10px;
+    text-indent: -2em;
+    border-top: 10px solid #00BBDD;
+    border-bottom: 10px solid #00BBDD;
+    border-right: 20px solid #00BBDD;
+    border-left: 50px solid #00BBDD;
+    background-color: #FFFFFF;
+    word-break: break-all;
+    overflow: auto;
+}
+
+    /*  一行テキスト上の例  中の文字  */
+    span.text-example-inside{
+        /* var(--font-family-input) */
+        font-family: 'メイリオ',Meiryo,'Segoe UI', Arial, 'Segoe UI Symbol', system-ui;
+
+    }
+
+div.text-example-small{
+    width: 17em;
+    padding-right: 0.5em;
+    padding-left: 2.5em;
+    padding-right: 10px;
+    text-indent: -2em;
+    border-top: 10px solid #00BBDD;
+    border-bottom: 10px solid #00BBDD;
+    border-right: 20px solid #00BBDD;
+    border-left: 50px solid #00BBDD;
+    background-color: #FFFFFF;
+    word-break: break-all;
+    overflow: auto;
+}
+
+div.text-example-wide{
+    padding-right: 0.5em;
+    padding-left: 2.5em;
+    padding-right: 10px;
+    text-indent: -2em;
+    border-top: 10px solid #00BBDD;
+    border-bottom: 10px solid #00BBDD;
+    border-right: 20px solid #00BBDD;
+    border-left: 50px solid #00BBDD;
+    background-color: #FFFFFF;
+    word-break: break-all;
+    overflow: auto;
+}
+
+/*  答え。基本一行  */
+div.little-answer{
+    margin: 10px 0;
+    border: 2px solid #27FF7C;
+
+    background-color: #e0ffff;
+}
+
+/*  発表  ブロックで */
+div.publication{
+    /*    margin: 10px 0;*/
+/*    margin-top: 10px;*/
+/*    margin-bottom: 10px;*/
+    margin-left: -20px;
+
+    /*    padding: 10px;*/
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+
+
+    border: 2px solid #99f0f0;
+/*    background-color: #f0fff0;*/
+    -moz-border-radius: 10px;/*for Firefox*/
+    -webkit-border-radius: 10px;/*for Safari and chrome*/
+    border-radius: 10px;
+    behavior: url(../itemCss/border-radius.htc);/*for IE*/
+}
+
+/*--------------------------
+以降、基本 複数行のブロック
+------------------------------*/
+
+/* マニアック */
+div.maniac {
+    /*    margin: 10px 0;*/
+/*    margin-top: 10px;*/
+    margin-right: 0;
+/*    margin-bottom: 10px;*/
+    margin-left: -20px;
+
+    /*    padding: 10px;*/
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+
+    border: 3px solid #E083E0;
+    /* var(--maniac-color) */
+    background-color: #E083E0;
+}
+
+.maniac-caption {
+    /*    padding-left: 20px;*/
+    margin-bottom: 10px;
+    quotes: "[ " " ]";
+}
+
+.maniac-caption::before{
+    content: open-quote;
+}
+
+.maniac-caption::after{
+    content: close-quote;
+}
+
+details.details-maniac{
+    margin-right: 0;
+    margin-left: -20px;
+
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+
+    border: 3px solid #E083E0;
+    /* var(--maniac-color) */
+    background-color: #E083E0;
+}
+
+details.details-maniac{
+    transition: 0.5s;
+}
+
+details.details-maniac[open]{
+    background: #FFD8E8;
+}
+
+/* 折り畳み式のもののタイトル */
+.slide-title{
+    margin-left: 20px;
+}
+
+/* 細かい説明など */
+div.detail-supplement{
+    margin-right: 0;
+    margin-left: -20px;
+
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+
+    border: 3px solid #ff933e;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+
+    background-color: #FFF0B2;
+}
+
+.detail-supplement-caption {
+    /*    padding-left: 20px;*/
+    margin-bottom: 10px;
+    quotes: "[ " " ]";
+}
+
+.detail-supplement-caption::before{
+    content: open-quote;
+}
+
+.detail-supplement-caption::after{
+    content: close-quote;
+}
+
+details.details-detail-supplement{
+    margin-right: 0;
+    margin-left: -20px;
+
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+
+    border: 3px solid #ff933e;
+    /* var(--detail-supplement-color) */
+    background-color: #FFD864;
+}
+
+details.details-detail-supplement{
+    transition: 0.5s;
+}
+
+details.details-detail-supplement[open]{
+    background: #FFF0B2;
+}
+
+/*  アコーディオンの細かい説明   */
+div.slide-detail{
+
+    border: 3px solid #ff933e;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+
+    background-color: #fff0b2;
+}
+
+.t-slide-detail{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-right: 1rem;
+    /* var(--bu-font-family-title) */
+    font-family: 'BIZ UDゴシック','メイリオ',Meiryo,'Segoe UI',Calibri,Arial,Sans-Serif;
+    font-size: 1.2em;
+
+    border-width: 3px;
+    border-style: solid;
+    border-color: #ff933e;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+/*  アコーディオンのマニアック   */
+div.slide-maniac{
+    border: 3px solid #e083e0;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+
+    background-color: #ffd8e8;
+}
+
+.t-slide-maniac{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-right: 1rem;
+    /* var(--bu-font-family-title) */
+    font-family: 'BIZ UDゴシック','メイリオ',Meiryo,'Segoe UI',Calibri,Arial,Sans-Serif;
+    font-size: 1.2em;
+
+    border-width: 3px;
+    border-style: solid;
+    border-color: #e083e0;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+/*  答え  */
+div.answer{
+    /*    margin: 10px 0;*/
+/*    margin-top: 10px;*/
+    margin-right: 0;
+/*    margin-bottom: 10px;*/
+    margin-left: -20px;
+
+    /*    padding: 10px;*/
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+
+    border:2px solid #8BFFE0;
+/*    background-color: #8BFFE0; */
+}
+
+/*  初期値  */
+div.initial-value {
+    margin-left: -20px;
+
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+
+    border: 2px solid #E8E000;
+
+}
+
+.initial-value-caption {
+    /*    padding-left: 20px;*/
+    margin-bottom: 10px;
+    quotes: "[ " " ]";
+}
+
+.initial-value-caption::before{
+    content: open-quote;
+}
+
+.initial-value-caption::after{
+    content: close-quote;
+}
+
+/* 間違った例 */
+div.mistake-example{
+    padding: 10px 5px;
+    border: 1px solid #ff6547;
+
+/*    background-color: #FFF0D8;*/
+}
+
+/* 正しい例 */
+div.correct-example{
+    padding: 10px 5px;
+    border: 1px solid #90ee90;
+
+/*    background-color: #ccff99;*/
+}
+
+/*  工夫  */
+div.bit-more{
+    /*    margin: 10px 0;*/
+    margin-top: 10px;
+    margin-right: 0;
+    margin-bottom: 10px;
+    margin-left: -20px;
+
+/*    padding: 10px;*/
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+
+    border: 2px solid #B264C1;
+
+}
+
+.bit-more-caption{
+    /*    padding-left: 20px;*/
+    margin-bottom: 10px;
+    quotes: "[ " " ]";
+}
+
+.bit-more-caption::before{
+    content: open-quote;
+}
+
+.bit-more-caption::after{
+    content: close-quote;
+}
+
+
+/*  例  長いブロックで  */
+div.example {
+    /*    d-type-basicで マージンを開けるため、あえて指定しない  */
+    /*    margin: 10px 0 15px -30px;*/
+    margin-left: -30px;
+
+    /*    padding: 10px;*/
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+
+    border: 2px solid #74C1F0;
+
+/*    background-color: #f8f8ff;*/
+}
+
+.example-caption {
+    /*    padding-left: 20px;*/
+    margin-bottom: 10px;
+    quotes: "[ " " ]";
+}
+
+.example-caption::before{
+    content: open-quote;
+}
+
+.example-caption::after{
+    content: close-quote;
+}
+
+/*  例の中の１つの要素 */
+/* ただし、１つしかない場合は、 .example  の中でなくても使用する場合あり  */
+div.example-one {
+/*    d-type-basicで マージンを開けるため、あえて指定しない  */
+/*    margin: 10px 0;*/
+    margin-left: -20px;
+    padding: 1px 20px;
+/*    border: 2px solid #27FF7C;*/
+
+    background-color: #E0F0FF;
+    -moz-border-radius: 10px;/*for Firefox*/
+    -webkit-border-radius: 10px;/*for Safari and chrome*/
+    border-radius: 10px;
+    behavior: url(../itemCss/border-radius.htc);/*for IE*/
+}
+
+.example-one-caption {
+    /*    padding-left: 20px;*/
+    margin-top: 10px;
+    margin-bottom: 10px;
+    quotes: "[ " " ]";
+}
+
+.example-one-caption::before{
+    content: open-quote;
+}
+
+.example-one-caption::after{
+    content: close-quote;
+}
+
+    /*  例の中の準備 */
+    div.example-provision {
+        margin: 10px 0;
+        /* border: 1px solid #27FFE0; */
+    }
+
+    /*  例の中の実行内容 */
+    div.example-execution {
+        margin: 10px 0;
+        /* border: 1px solid #27FFE0; */
+    }
+
+    /*  例の中の起きた結果  */
+    div.example-result {
+        margin: 10px 0;
+        /* border: 1px solid #27FFE0; */
+    }
+
+/*  例  つまり、などで使う  */
+div.example-words{
+    margin: 10px 0 0;
+    padding-left: 2.5em;
+    padding-right: 10px;
+    text-indent: -2em;
+
+    border-top: 1px solid #7CF7FF;
+    border-left: 1px solid #7CF7FF;
+    border-right: 1px solid #7CF7FF;
+    background-color: #FFFFFF;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+/*  例  つまり、の結果  */
+div.example-words-after{
+    margin: 0 0 10px;
+    padding-left: 2.5em;
+    padding-right: 10px;
+    text-indent: -2em;
+
+    border: 1px solid #7CF7FF;
+    background-color: #FFFFFF;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+}
+
+/*  例の中の入力内容 */
+div.example-border{
+
+    padding-left: 10px;
+    color: #0F004D;
+    border: 2px solid #27FFE0;
+    background-color: #FFFFFF;
+}
+
+/*  例というより指示  */
+div.instruction {
+
+    /*    d-type-basicで マージンを開けるため、あえて指定しない  */
+    margin-left: -30px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+
+    border: 2px solid #9BFFB2;
+
+}
+
+/*  指示の中の1つの要素 */
+/*  ただし、1つしかない場合は、 .instruction  の中でなくても使用する場合あり */
+div.instruction-one {
+    /*    d-type-basicで マージンを開けるため、あえて指定しない  */
+    /*    margin: 10px 0;*/
+    margin-left: -20px;
+    padding: 1px 20px;
+
+/*    border: 1px solid #27C1FF;*/
+/*    background-color: #E8FFFF;*/
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    behavior: url(../itemCss/border-radius.htc);
+}
+
+    /*  指示の中の準備 */
+    div.instruction-provision {
+        margin-left: -20px;
+        padding-right: 20px;
+        padding-left: 20px;
+
+        border: 1px solid #27FF7C;
+        -moz-border-radius: 10px;/*for Firefox*/
+        -webkit-border-radius: 10px;/*for Safari and chrome*/
+        border-radius: 10px;
+        behavior: url(../itemCss/border-radius.htc);/*for IE*/
+    }
+
+    /*  指示の中の実行 */
+    div.instruction-execution {
+        margin-left: -20px;
+        padding-right: 20px;
+        padding-left: 20px;
+
+        border: 3px solid #27FF7C;
+
+        /*    background-color: #FFF093;*/
+
+    }
+
+    /*  指示の中の結果 */
+    div.instruction-result {
+        position: relative;
+        margin-top: 20px;
+        margin-left: -20px;
+        margin-bottom: 10px;
+        padding-right: 20px;
+        padding-left: 20px;
+        border: 1px solid #27C1FF; 
+    }
+
+    div.instruction-result::before{
+        display: block;
+        content: "↓";
+        position: absolute;
+        width: 1.6em;
+        height: 1.6em;
+        left: 100px;
+        top: -30px;
+        padding-top: 0.2em;
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        color: #fff;
+        background-color: #7DB4E6;
+        border-radius: 50%;
+    }
+
+/*  想定された使い方の例  長いブロックで  */
+div.use-example {
+    margin: 10px 0 15px 0;
+    padding: 10px;
+    border: 2px solid #74D8C9;
+
+/*    background-color: #b0e0e6;*/
+}
+
+/*  想定された使い方の例  の中の１つの要素 */
+/* ただし、１つしかない場合は、 .use-example  の中でなくても使用する場合あり  */
+div.use-example-one {
+    margin: 10px 0;
+    padding: 0 5px;
+    border: 3px solid #27FF7C;
+
+    background-color: #99ffff;
+    -moz-border-radius: 10px;/*for Firefox*/
+    -webkit-border-radius: 10px;/*for Safari and chrome*/
+    border-radius: 10px;
+    behavior: url(../itemCss/border-radius.htc);/*for IE*/
+}
+
+    /*  use-example-one  の中の準備 */
+    div.use-example-provision {
+        margin: 10px 0;
+        /* border: 1px solid #27FFE0; */
+    }
+
+    /*  use-example-one  の中の実行内容 */
+    div.use-example-execution {
+        margin: 10px 0;
+        /* border: 1px solid #27FFE0; */
+    }
+
+    /*  use-example-one  の中の結果  */
+    div.use-example-result {
+        margin: 10px 0;
+        /* border: 1px solid #27FFE0; */
+    }
+
+/*  設定項目  1項目分  */
+div.creation-one {
+    margin: 20px 0;
+    border: 2px solid #7CF7FF;
+    background-color: #FFFFFF;
+}
+
+    div.creation-one-inner {
+        margin: 20px;
+        border: 1px solid #AFF7E8;
+    }
+
+/*  設定項目  creation-one内で使用 */
+span.creation-item {
+    margin-left: 30px;
+}
+
+/*  設定の値  */
+span.creation-variable {
+
+}
+
+
+/*  設定項目  ブロックで。 creation-oneで囲まない */
+div.creation-item-block {
+    margin: 20px 0 0;
+    padding-left: 30px;
+    /*  border-bottom  のみ 1px */
+    border-top: 2px solid #7CF7FF;
+    border-right: 2px solid #7CF7FF;
+    border-left: 2px solid #7CF7FF;
+    border-bottom: 1px solid #7CF7FF;
+    background-color: #FFFFFF;
+}
+
+/*  設定の値  ブロックで */
+div.creation-variable-block {
+    margin: 0 0 20px;
+    padding-left: 2.5em;
+    padding-right: 10px;
+    text-indent: -2em;
+
+    /*  border-top  のみ 1px */
+    border-top: 1px solid #7CF7FF;
+    border-right: 2px solid #7CF7FF;
+    border-left: 2px solid #7CF7FF;
+    border-bottom: 2px solid #7CF7FF;
+    background-color: #FFFFFF;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    overflow: auto;
+}
+
+
+/*  場合と結果を簡単に表示。どんな状態か */
+.situation-easy{
+
+/*
+    display: block;
+    margin: 0;
+    padding-left: 10px;
+    border-left: 5px solid #363EFF;
+*/
+
+}
+
+/*  場合と結果を簡単に表示。どんな場合か */
+.case-easy{
+/*
+    display: block;
+    margin: 0;
+    padding-left: 10px;
+    border-left: 5px solid #64FF7C;
+*/
+}
+
+/*  場合と結果を簡単に表示。結果 */
+.result-easy{
+/*
+    display: block;
+    margin: 0;
+    padding-left: 10px;
+    border-left: 5px solid #D8AAA2;
+*/
+}
+
+/*  入力欄みたいなの。形だけ */
+.inputSample{
+    border: 3px outset #808080;
+    background-color: #FFFFFF;
+    word-break: break-all;
+}
+
+.button-gui {
+    padding: 0 15px;
+
+    border: 3px outset #808080;
+    border-radius: 5px;
+    background-color: #D9D9D9;
+}
+
+.button-gui-s {
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 3px 15px;
+
+    border: 3px outset #808080;
+    border-radius: 5px;
+    background-color: #D9D9D9;
+}
+
+.button-gui-r {
+    margin-right: 5px;
+    padding: 3px 15px;
+
+    border: 3px outset #808080;
+    border-radius: 5px;
+    background-color: #D9D9D9;
+}
+
+.button-a{
+    text-decoration: none;
+}
+
+.old-button-gui-link{
+    display: inline-block;
+    position: relative;
+    top: 0;
+    padding: 0 15px;
+    /* var(--font-family-button) */
+    font: 20px 'メイリオ',Meiryo,'Segoe UI',Calibri,Arial,Sans-Serif;
+    border-top: 2px solid #808080;
+    border-left: 2px solid #808080;
+    border-right: 6px ridge #46272E;
+    border-bottom: 8px ridge #46272E;
+    border-radius: 10px;
+    background-color: #D1D8E0;
+
+    color: #000;
+
+}
+
+.old-button-gui-link:hover,
+.old-button-gui-link:focus,
+.old-button-gui-link:active{
+    top: 5px;
+    color: #000;
+
+    border-right: 2px solid #46272E;
+    border-bottom: 3px solid #46272E;
+    transition: all 0.3s;
+}
+
+.button-gui-link{
+    display: inline-block;
+    position: relative;
+    top: -2px;
+    padding: 0 15px;
+    /* var(--font-family-button) */
+    font: 20px 'メイリオ',Meiryo,'Segoe UI',Calibri,Arial,Sans-Serif;
+    border: 2px solid #808080;
+    
+    border-radius: 10px;
+    background-color: #D1D8E0;
+
+    color: #000;
+    box-shadow: 0 3px 0 3px #000;
+}
+
+.button-gui-link:hover,
+.button-gui-link:focus,
+.button-gui-link:active{
+    top: 1px;
+    color: #000;
+    box-shadow: 0 1px 0 0 #000;
+    transition: all 0.2s;
+}
+
+/*----------------------
+  見出しなど
+----------------------*/
+
+/* 見出しでボタンを */
+.h-button {
+    margin: 0 0 30px -20px;
+    padding: 0 20px 0.7em;
+    max-width: 400px;
+    /* var(--font-family-title) */
+    font: 20px 'VL Pゴシック','メイリオ',Meiryo,'Segoe UI',Calibri,Arial,Sans-Serif;
+    border-bottom: 2px solid #00bbdd;
+}
+
+    /* 見出しでボタンを */
+    .h-button .h-button-button{
+        margin-right: 10px;
+        padding: 0 15px;
+        font-size: 24px;
+        border-top: 2px solid #808080;
+        border-left: 2px solid #808080;
+        border-right: 4px ridge #46272E;
+        border-bottom: 6px ridge #46272E;
+        border-radius: 10px;
+        background-color: #D1D8E0;
+    }
+
+.h-guiText{
+    position: relative;
+    margin-bottom: 30px;
+    margin-left: -20px;
+    padding: 0.4em 0.5em 0.4em 48px;
+    /* var(--font-family-title) */
+    font: 24px/130% 'VL Pゴシック','メイリオ',Meiryo,'Segoe UI',Calibri,Arial,Sans-Serif;
+    color: #494949;
+    background-color: #F0F0F0;
+    border-bottom: 3px solid #D7D7D7;
+}
+
+.h-guiText::before{
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 16px;
+    left: 20px;
+    background-color: #7DB4E6;
+    border-radius: 50%;
+}
+
+
+.h-mainMenu{
+    margin-left: -20px;
+    margin-bottom: 30px;
+    padding: 0.4em 0 0.4em 17px;
+    font-size: 1.5rem;
+    background-color: #F2F2F2;
+    border-left: 4px solid #FF7C27;
+    border-bottom: 3px solid #D7D7D7;
+}
+
+.h-guiTab{
+    /*    margin: 30px 0 50px;*/
+    margin-top: 30px;
+    margin-right: 0;
+    margin-bottom: 30px;
+    margin-left: -20px;
+
+    padding-left: 10px;
+    max-width: 400px;
+    /* var(--font-family-title) */
+    font: 24px 'VL Pゴシック','メイリオ',Meiryo,'Segoe UI',Calibri,Arial,Sans-Serif;
+
+    border-bottom: 3px solid #9C9C9C;
+    border-bottom-style: outset;
+}
+
+.h-guiTab .h-guiTab-text{
+    margin: 0 10px 0 7px;
+    padding: 0 20px;
+    min-width: 100px;
+    font-size: 30px;
+    color: #0F0F0F;
+    background-color: #F0F0F0;
+    border: solid 1px #000000;
+    border-top-left-radius: 0.4em;
+    border-top-right-radius: 0.4em;
+}
+
+.h-guiText-lank2{
+    /*    margin: 0 20px 20px 0;*/
+
+    margin-right: 20px;
+    margin-bottom: 30px;
+    margin-left: -20px;
+
+    /* var(--font-family-title) */
+    font: 20px 'VL Pゴシック','メイリオ',Meiryo,'Segoe UI',Calibri,Arial,Sans-Serif;
+    max-width: 400px;
+
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: #8BC1B9;
+}
+
+.h-guiText-lank2 .lank2-text{
+    padding: 0 10px;
+    font-size: 24px;
+    color: #0F0F0F;
+    background-color: #F0F0F0;
+}
+
+/* 見出しでボタンを */
+.h-button-lank2{
+    /*    margin: 0 20px 20px 0;*/
+
+    margin-right: 20px;
+    margin-bottom: 30px;
+    margin-left: -20px;
+
+    /* var(--font-family-title) */
+    font: 20px 'VL Pゴシック','メイリオ',Meiryo,'Segoe UI',Calibri,Arial,Sans-Serif;
+    max-width: 400px;
+
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 0.7em;
+    padding-top: 5px;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: #8BC1B9;
+}
+
+.h-button-lank2 .lank2-button{
+    margin-right: 15px;
+    padding: 0 15px;
+    font-size: 22px;
+    border-top: 2px solid #808080;
+    border-left: 2px solid #808080;
+    border-right: 4px ridge #46272E;
+    border-bottom: 6px ridge #46272E;
+    border-radius: 10px;
+    background-color: #D1D8E0;
+}
+
+.t-ontextkey{
+    margin: 0 0 30px -20px;
+    padding: 0.4em 15px;
+    width: 300px;
+    font-size: 1.2em;
+    border-left: 6px solid #00bbdd;
+    border-bottom: 1px solid #808080;
+}
+
+/*----------------------
+ このページの目次
+----------------------*/
+
+ul.ul-thispage{
+
+}
+
+ul.ul-thispage a{
+    display: block;
+    text-decoration: none;
+}
+
+ul.ul-thispage a,
+ul.ul-thispage a:link,
+ul.ul-thispage a:visited{
+    color: #000;
+}
+
+ul.ul-thispage a:hover,
+ul.ul-thispage a:focus,
+ul.ul-thispage a:active{
+    color: #F90;
+}
+
+ul.ul-thispage ul{
+    margin-left: 40px;
+}
+
+.thispage-h-mainMenu{
+    margin-bottom: 20px;
+    padding: 0.4rem 0 0.4rem 17px;
+    font-size: 1.2rem;
+    background-color: #F2F2F2;
+    border-left: 4px solid #FF7C27;
+    border-bottom: 3px solid #D7D7D7;
+
+}
+
+.thispage-h-guiTab{
+    margin-bottom: 30px;
+    padding-left: 10px;
+    max-width: 300px;
+    border-bottom: 3px solid #9C9C9C;
+    border-bottom-style: outset;
+}
+
+.thispage-h-guiTab .thispage-h-guiTab-text{
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    margin: 0 10px 0 7px;
+    padding: 0 20px;
+    min-width: 100px;
+    font-size: 1.5rem;
+    color: #0F0F0F;
+    background-color: #F0F0F0;
+    border: solid 1px #000000;
+    border-top-left-radius: 0.4em;
+    border-top-right-radius: 0.4em;
+}
+
+
+
+/*----------------------
+実験
+----------------------*/
+
+
+
+
+
+
+
+
+
+
+/*--------------------------
+  メディアクエリ
+------------------------------*/
+
+@media screen and (max-width: 750px){
+
+    ul.trr-category{
+        width: auto;
+        margin-left: 2rem;
+    }
+
+    .top-focus-nav{
+        max-width: 300px;
+    }
+    .focus-title-nav{
+        margin-left: 20px;
+        width: 180px;
+    }
+
+    .trrTopPage-side{
+        width: 180px;
+    }
+
+    kbd.inputKbd-pre,
+    code.srcCode-pre,
+    samp.outSamp-pre{
+        white-space: normal;
+    }
+
+    kbd.inputinline-kbd-pre-s,
+    kbd.inputinline-kbd-pre-r,
+    code.inputinline-code-pre-s,
+    code.inputinline-code-pre-r{
+        white-space: normal;
+        word-break: break-all;
+    }
+
+    code.inputCodeBox-pre{
+        white-space: normal;
+    }
+
+    div.inputOneLine,
+    div.file-inputoneline,
+    code.filesrc-inputoneline,
+    div.example-words,
+    div.example-words-after,
+    div.creation-variable-block{
+        line-height: 170%;
+    }
+
+}
+
+@media screen and (max-width: 550px){
+
+    .articleClass {
+        padding-left: 40px;
+    }
+
+    div.text-example{
+        width: auto;
+        border-left-width: 20px;
+    }
+
+    div.text-example-small{
+        width: auto;
+        border-left-width: 20px;
+    }
+
+    div.text-example-wide{
+        width: auto;
+        border-left-width: 20px;
+    }
+
+    .filesrc-filename{
+        width: auto;
+    }
+
+    div.creation-one {
+        border-style: none;
+    }
+
+    /*  creation-item-block  と同じ */
+    span.creation-item{
+        display: block;
+        margin: 20px 0 0;
+        padding-left: 30px;
+        border-top: 2px solid #7CF7FF;
+        border-right: 2px solid #7CF7FF;
+        border-left: 2px solid #7CF7FF;
+        border-bottom: 1px solid #7CF7FF;
+        background-color: #FFFFFF;
+    }
+
+    /*  creation-variable-block  と同じ  */
+    span.creation-variable{
+        display: block;
+        margin: 0 0 20px;
+        padding-left: 2.5em;
+        padding-right: 10px;
+        text-indent: -2em;
+        line-height: 170%;
+        border-top: 1px solid #7CF7FF;
+        border-right: 2px solid #7CF7FF;
+        border-left: 2px solid #7CF7FF;
+        border-bottom: 2px solid #7CF7FF;
+        background-color: #FFFFFF;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        overflow: auto;
+    }
+
+    span.creation-creation-interval{
+        display: none;
+    }
+
+}

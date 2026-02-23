@@ -1,0 +1,1214 @@
+
+<!DOCTYPE HTML>
+<html lang="ja">
+<head prefix="og: https://ogp.me/ns#">
+
+<meta charset="utf-8">
+
+<meta name="keywords" content="mousePlug。その１,TextRunRun,テキストランラン,テキストルンルン">
+<meta name="description" content="TextRunRunの追加機能で、マウスの動きを登録するものがあるのでその説明">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone-no">
+
+<link rel="shortcut icon" href="common/imgCommon/shorticon.ico">
+<link rel="apple-touch-icon" href="common/imgCommon/touchicon.png" />
+<link rel="icon" sizes="192x192" href="common/imgCommon/icon192.png" />
+
+
+<title>mousePlug。その１ - ブランボンのGitHubPagesのやつ</title>
+
+<link type="text/css" href="common/cssCommon/resetAll.css" rel="stylesheet" />
+<link type="text/css" href="common/cssCommon/buBootstrap.css" rel="stylesheet" />
+
+<link type="text/css" href="common/cssCommon/commonCssbu.css" rel="stylesheet" />
+<link type="text/css" href="css/trrCommon.css" rel="stylesheet" />
+<link type="text/css" href="css/mousePlug.css" rel="stylesheet" />
+
+    <script src="common/jQuery/jquery.min.js"></script>
+    <script src="common/javaScript/jQueryMenuSlide.js"></script>
+
+</head>
+<body>
+
+<div id="allContents">
+
+    <header id="header-toppage">
+        <div id="bg-headerbg"></div>
+        <div id="header-contents">
+            <div id="div-header-title">
+                <div id="header-title-2">
+                    <h1 id="alltop-title">
+                        ブランボン<span class="alltop-title-little">の</span><br class="br-mobile-only" /><span class="alltop-title-little2">GitHub Pages</span><span class="alltop-title-little">のやつ</span>
+                    </h1>
+                </div>
+            </div>
+            <nav id="nav-head-trrPage">
+                <div id="div-head-trrPage">
+                    <p class="p-head-trrPage1">
+                        関連ページ
+                    </p>
+                    <div class="trrhomepage-block">
+                        <a href="https://textrunrunburanbon.com" target="_blank">TextRunRunの説明を見るページ</a>
+                    </div>
+                </div>
+            </nav>
+            <div id="pagetop-first"></div>
+        </div>
+    </header>
+
+<div id="page-contents">
+
+<main id="mainId">
+
+<article class="articleClass">
+
+    <h1 class="h1-first">マウスの動きを登録する追加機能 mousePlug。その１</h1>
+    <nav class="breadcrumb-art">
+        <ul class="ul-breadcrumb">
+            <li><span class="breadcrumb-current">トップ</span></li>
+            <li><span class="breadcrumb-current">mousePlug。その１</span></li>
+        </ul>
+    </nav>
+
+<div class="width-short">
+    <div class="div-section-one d-type-basic">
+        <nav class="categorylinks">
+            <div class="categorylinks-title">
+                <span class="span-categorylinks-title">mousePlugの関連</span>
+            </div>
+            <ul class="ul-categorylinks-row">
+                <li class="categorylinks-current">その<span class="numeral">1</span></li>
+                <li><a href="mousePlug2.html">その<span class="numeral">2</span></a></li>
+                <li><a href="mousePlugDict.html">mousePlugの変数・関数・サブルーチン</a></li>
+            </ul>
+        </nav>
+    </div><!--  div-section-one  -->
+    <div class="div-section-one d-type-basic">
+        <nav class="index-thispage">
+            <h2 class="t-index-thispage">このページの目次</h2>
+            <ul class="ul-index-preface">
+                <li>
+                    <a href="#title_preface">前書き</a>
+                </li>
+            </ul>
+            <ul class="ul-index-thispage">
+                <li>
+                    <a href="#title1">概要</a>
+                </li>
+                <li>
+                    <a href="#title2">マウスのドラッグ位置を登録する</a>
+                </li>
+                <li>
+                    <a href="#title3">ソースコードへの追加の仕方</a>
+                    <ul class="ul-index-thispage-2">
+                        <li>
+                            <a href="#title3_1">mousePlug のダウンロード</a>
+                        </li>
+                        <li>
+                            <a href="#title3_2">mousePlug のフォルダをコピーする</a>
+                        </li>
+                        <li>
+                            <a href="#title3_3">ソースコードを記入する</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#title4">マウスの位置を数字で指定するウインドウについて</a>
+                    <ul class="ul-index-thispage-2">
+                        <li>
+                            <a href="#title4_1">ウインドウを基準位置にするかどうか</a>
+                        </li>
+                        <li>
+                            <a href="#title4_2">ウインドウタイトル</a>
+                        </li>
+                        <li>
+                            <a href="#title4_3">その他のウインドウ</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#title5">クリックポイント</a>
+                    <ul class="ul-index-thispage-2">
+                        <li>
+                            <a href="#title5_1">今のマウスの位置を読み出し</a>
+                        </li>
+                        <li>
+                            <a href="#title5_2">クリックポイント切り替え</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div><!--  div-section-one  -->
+
+    <section id="title_preface" class="sectionFirst d-type-basic">
+        <h1 class="t-preface">
+            <span class="t-preface-inner">前書き</span>
+        </h1>
+        <p class="p-sub">
+            マウスの単純な動きを登録して使える様にする
+            <abbr class="abbr-softName-s" title="TextRunRun">TRR</abbr>
+            のプラグイン（追加項目）の様なものを紹介して説明します。
+        </p>
+        <p class="p-bundle">
+            とりあえず、名前を
+            <span class="thisword-s">mousePlug</span>
+            と名付けています。
+        </p>
+        <div class="caution">
+            <div class="bundle-point inner">
+                <p class="p-sub">
+                    ここで説明する
+                    <span class="thisword-s">mousePlug</span>
+                    は<br />
+                    <em class="em-basic">
+                        ソースコード版の
+                        <span class="softName-s">TextRunRun</span>
+                        でのみ使用できるものです。
+                    </em>
+                </p>
+            </div>
+            <p class="p-sub">
+                ソースコード版の
+                <abbr class="abbr-softName-s" title="TextRunRun">TRR</abbr>
+                に追加する事で初めて使用できます。
+            </p>
+            <p class="p-sub">
+                追加の手順は後で説明します。
+            </p>
+        </div>
+        <!--  スペース   -->
+        <div class="spacer-1"></div>
+        <p class="p-sub">
+            わざわざ紹介しておいて何ですが、ひどくシンプルなものです。
+        </p>
+        <p class="p-sub">
+            マウスの動きを、単純な動きだけですが登録しておける様にしたものです。
+        </p>
+    </section><!-- sectionFirst -->
+    <section id="title1" class="sectionFirst d-type-basic">
+        <h1 class="t-lank1">概要</h1>
+        <p class="p-sub">
+            基本的に以下の画像のメニューを使っていくものです。
+        </p>
+        <div class="img-div">
+            <img src="image/mousePlugImg/mouMenu.png" alt="画像">
+        </div>
+        <div class="bundle">
+            <p class="p-sub">
+                メニューを見ると分かると思いますが、
+            </p>
+            <ul class="ul-disc-mini">
+                <li><span class="guiText-r">指定位置から指定位置</span></li>
+                <li><span class="guiText-r">今の位置から指定位置</span></li>
+                <li><span class="guiText-r">今の位置からプラス</span></li>
+                <li><span class="guiText-r">クリックポイント</span></li>
+            </ul>
+            <p class="p-sub-attach-top">
+                この
+                <span class="numeral">4</span>
+                種類に大きく分かれています。
+            </p>
+        </div>
+        <p class="p-sub">
+            これらのマウスの動きの操作と登録をしていくものです。
+        </p>
+        <div class="bundle">
+            <p class="p-sub">
+                もっとも、できる事はマウスの直線的な動きだけであり単純な事しかできません。
+            </p>
+        </div>
+        <div class="div-section-one d-type-basic">
+            <p class="p-sub">
+                とりあえず例として、メニューの
+                <span class="guiText-s">登録を表示</span>
+                を選ぶと以下のウインドウが表示します。
+            </p>
+            <div class="img-div">
+                <img src="image/mousePlugImg/moulistAtoA.png" class="img-w-300px" alt="画像">
+            </div>
+            <div class="bundle">
+                <p class="p-sub">
+                    このウインドウは、マウスの動きの情報を登録するリストといったものです。
+                </p>
+            </div>
+            <div class="bundle">
+                <p class="p-sub">
+                    この
+                    <span class="thisword-s">mousePlug</span>
+                    は、このリストに登録しておいてその後に使っていける様にするものです。
+                </p>
+            </div>
+        </div><!--  div-section-one  -->
+        <div class="div-section-one d-type-basic">
+            <p class="p-sub">
+                以上の事を見れば使い方と出来る事はほぼ予想がつくようなものだと思います。
+            </p>
+            <p class="p-sub">
+                とはいっても、使ってみなくてもここで全て把握できる様にするために以下にしつこく説明をしていく事にします。
+            </p>
+        </div><!--  div-section-one  -->
+    </section><!-- sectionFirst -->
+    <section id="title2" class="sectionFirst d-type-basic">
+        <h1 class="t-lank1">マウスのドラッグ位置を登録する</h1>
+        <p class="p-sub">
+            マウスのドラッグ位置を登録する方法から説明します。
+        </p>
+        <p class="p-sub">
+            先ほどのメニューを使って、
+            <span class="guiText-s">マウスで登録</span>
+            を選びます。
+        </p>
+        <div class="img-div">
+            <img src="image/mousePlugImg/menuEntryMou.png" class="img-w-450px" alt="画像">
+        </div>
+        <p class="p-sub">
+            すると、この様なメニューが表示します。
+        </p>
+        <p class="p-sub">
+            なんでもいいのですが、ここでは<br />
+            <span class="guiText-r">ウインドウを指定する</span>
+            を選びます。
+        </p>
+        <p class="p-sub">
+            すると以下の様に、最前面のウインドウが青くなります。<br />
+            &#40;
+            青い半透明のウインドウがつくだけ
+            &#41;
+        </p>
+        <div class="img-div">
+            <img src="image/mousePlugImg/mouPlugRclickEntry.png" class="img-w-450px" alt="画像">
+        </div>
+        <div class="bundle">
+            <p class="p-sub">
+                青い部分を右クリックします。
+            </p>
+            <p class="p-sub">
+                これが、ドラッグの開始位置になります。
+            </p>
+        </div>
+        <p class="p-sub">
+            そうすると、以下の様なウインドウが表示します。
+        </p>
+        <div class="img-div">
+            <img src="image/mousePlugImg/mouPlugRclickEntry2.png" class="img-w-450px" alt="画像">
+        </div>
+        <p class="p-sub">
+            ですが、このウインドウは無視します。
+        </p>
+        <p class="p-sub">
+            そしてもう一度青い部分を右クリックします。
+        </p>
+        <p class="p-sub">
+            それがドラッグの終了位置になります。
+        </p>
+        <p class="p-sub">
+            すると、前のウインドウの代わりに以下の２つのウインドウが表示します。
+        </p>
+        <div class="img-div">
+            <img src="image/mousePlugImg/mouPlugRclickEntry3.png" class="img-w-450px" alt="画像">
+        </div>
+        <div class="bundle">
+            <p class="p-sub">
+                一つは、マウスのドラッグ位置を数値で表しているウインドウで、もう一つはマウスの動きを登録するリストがあるウインドウです。
+            </p>
+            <p class="p-sub">
+                このマウスのドラッグ位置を数値で表しているウインドウがある状態で、マウスの動きを登録するリストがあるウインドウの<br />
+                <span class="button-gui-r">保存</span>
+                ボタンを押すと、ドラッグ位置が登録されます。
+            </p>
+            <p class="p-sub">
+                ここの場合では、リストの
+                <span class="pickup-easy-s">set1</span>
+                に登録された事になります。
+            </p>
+        </div>
+        <div class="supplement">
+            <div class="supplement-caption">
+                補足
+            </div>
+            <p class="p-sub">
+                <span class="button-gui-r">保存</span>
+                ボタンを押すと、
+                <span class="button-gui-r">Yes</span>
+                か
+                <span class="button-gui-r">No</span>
+                の選択肢がでます。
+            </p>
+            <p class="p-sub">
+                ここで Yes を選ぶと、最前面のウインドウに対して実行するものができますが、<br />
+                No を選ぶと、ウインドウタイトルがここで指定されていたものと同じもののみしか実行しないものになってしまいます。
+            </p>
+        </div>
+        <div class="bundle">
+            <p class="p-sub">
+                今回の例は、最前面のウインドウの位置を基準として、マウスのドラッグをする位置を登録するというものです。
+            </p>
+            <p class="brackets">
+                最前面のウインドウの位置を基準としたくない場合は、<br />
+                メニューの
+                <span class="guiText-s">マウスで登録</span>
+                の後の
+                <span class="guiText-s">スクリーンを指定する</span>
+                の方を選べば、ウインドウの位置は関係なくなります。
+            </p>
+            <p class="p-sub">
+                取りあえず、以上のような方法でドラッグ位置を登録する事ができます。
+            </p>
+        </div>
+        <div class="div-section-one d-type-basic">
+            <p class="p-sub">
+                後は予想がつく事でしょうが、登録をした後はそれを今後に使っていける事になります。
+            </p>
+            <p class="p-sub">
+                ちなみに、さっきから何度も登場しているこのウインドウがあります。
+            </p>
+            <div class="img-div">
+                <img src="image/mousePlugImg/moulistAtoA.png" class="img-w-300px" alt="画像">
+            </div>
+            <div class="publication d-type-basic">
+                <p class="p-sub">
+                    このウインドウを
+                    <span class="windowName-s">マウスの登録</span>
+                    のウインドウと呼んでいきます。
+                </p>
+            </div>
+            <div class="bundle">
+                <p class="p-sub-no-bottom">
+                    <span class="windowName-r">マウスの登録</span>
+                    のウインドウの方の<br />
+                    <span class="button-gui-r">読み出し</span>
+                    のボタンを押すと、先ほど出てきた様な「マウスの位置を数字で指定する」ウインドウが表示し、
+                    <span class="pickup-easy-r">set1</span>
+                    などにある情報が記入された状態になります。
+                </p>
+                <p class="brackets">
+                    「マウスの位置を数字で指定する」のウインドウの<br />
+                    <span class="button-gui-r">On</span>
+                    のボタンを押すと、その数字の通りの位置にマウスを動かします。
+                </p>
+            </div>
+            <div class="bundle">
+                <p class="p-sub">
+                    <span class="button-gui-r">実行</span>
+                    のボタンを押すと、
+                    <span class="pickup-easy-r">set1</span>
+                    などにある情報の通りの位置にマウスを動かします。
+                </p>
+            </div>
+        </div><!--  div-section-one  -->
+        <div class="div-section-one d-type-basic">
+            <p class="p-sub">
+                なお先ほど、この
+                <span class="thisword-s">mousePlug</span>
+                は、
+            </p>
+            <ul class="ul-disc-mini">
+                <li><span class="guiText-r">指定位置から指定位置</span></li>
+                <li><span class="guiText-r">今の位置から指定位置</span></li>
+                <li><span class="guiText-r">今の位置からプラス</span></li>
+                <li><span class="guiText-r">クリックポイント</span></li>
+            </ul>
+            <p class="p-sub-attach-top">
+                この
+                <span class="numeral">4</span>
+                種類に大きく分かれていると書きました。
+            </p>
+            <div class="bundle">
+                <p class="p-sub">
+                    <span class="windowName-r">マウスの登録</span>
+                    のウインドウも、タブが
+                    <span class="numeral">4</span>
+                    つあり、そのタブを切り替える事でその
+                    <span class="numeral">4</span>
+                    種類のものを切り替える事になります。
+                </p>
+            </div>
+        </div><!--  div-section-one  -->
+    </section><!-- sectionFirst -->
+    <section id="title3" class="sectionFirst d-type-basic">
+        <h1 class="t-lank1">ソースコードへの追加の仕方</h1>
+        <p class="p-bundle">
+            <span class="cancelline-bu">
+                ソースコードへの追加の仕方は
+                <span class="thisword-s cancelline-bu">windowPlug</span>
+                と同じなのでそちらを参考にしてください。
+            </span>
+        </p>
+        <p class="p-sub">
+            この
+            <span class="thisword-s">mousePlug</span>
+            は<br />
+            <span class="softName-r">TextRunRun</span>
+            のソースコードに追加しないとそもそも使えません。
+        </p>
+        <p class="p-sub">
+            今になってですが、使える様にするための方法を説明します。
+        </p>
+        <div class="caution d-type-basic">
+            <div class="caution-caption">
+                諸注意
+            </div>
+            <p class="p-sub">
+                この
+                <span class="thisword-s">mousePlug</span>
+                は、
+                <span class="pickup-easy-r">40</span>
+                から
+                <span class="pickup-easy-r">49</span>
+                の Gui の番号を使用しています。
+            </p>
+            <p class="p-sub">
+                <abbr class="abbr-softName-r" title="TextRunRun">TRR</abbr>
+                の中で番号が同じ Gui をユーザーが既に使用している場合は注意してください。
+            </p>
+            <p class="brackets">
+                同じ様なプラグインである
+                <span class="thisword-s">windowPlug</span>
+                というのがありますが、それと同時に使う事は可能です。
+            </p>
+        </div>
+        <section id="title3_1" class="sectionSecond d-type-basic">
+            <h2 class="t-lank2">mousePlug のダウンロード</h2>
+            <p class="p-sub">
+                <cite class="webtitle-r">GitHub</cite>
+                のページからソースコードをダウンロードします。
+            </p>
+            <p class="p-sub">
+                <a href="https://github.com/buranbon51/mousePlugin" target="_blank" class="blank-siteword">
+                    <img src="image/mousePlugImg/icon.png" class="img-w-32px" alt="アイコン">
+                    mousePlug
+                    のソースコード
+                </a>
+            </p>
+            <!--  スペース   -->
+            <div class="spacer-1"></div>
+            <p class="p-sub">
+                <abbr class="abbr-softName-r" title="TextRunRun">TRR</abbr>
+                のソースコードをダウンロードした方なら、
+                <cite class="webtitle-r">GitHub</cite>
+                からそれをする方法も説明不要だと思います。
+            </p>
+            <div class="caution">
+                <p class="p-sub">
+                    <abbr class="abbr-softName-r" title="TextRunRun">TRR</abbr>
+                    のソースコードをダウンロードした方でないとそもそも
+                    <span class="thisword-s">mousePlug</span>
+                    の追加はできません。
+                </p>
+                <div class="div-trrpage inner d-type-small">
+                    <p class="t-div-trrpage">
+                        TextRunRunのWebサイト
+                    </p>
+                    <p class="p-sub-no-top">
+                        <abbr class="abbr-softName-r" title="TextRunRun">TRR</abbr>
+                        のソースコードの事については以下のページで説明しています。
+                    </p>
+                    <p class="p-sub">
+                        <span class="breadway-link">
+                            <span class="breadway-elem">
+                                <span class="trrhomepage spacePlus-r"><a href="https://textrunrunburanbon.com">TextRunRunの説明を見るページ</a></span>
+                            </span><br />
+                            <span class="breadway-elem"><span class="detailPage">細かい説明</span></span>
+                            <a href="https://textrunrunburanbon.com/page/detail/source/source1.php" target="_blank" class="blank-siteword">ソースコード版について</a>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </section><!-- sectionSecond -->
+        <section id="title3_2" class="sectionSecond d-type-basic">
+            <h2 class="t-lank2">mousePlug のフォルダをコピーする</h2>
+            <p class="p-sub">
+                <span class="thisword-r">mousePlug</span>
+                をダウンロードして解凍すると、以下のファイル構成になっていると思います。
+            </p>
+            <div class="img-div">
+                <img src="image/mousePlugImg/mouPlugMark.png" class="img-w-450px" alt="画像">
+            </div>
+            <p class="p-sub">
+                この中の
+                <span class="filePath-pickup-s">src</span>
+                の中にある、<br />
+                <span class="filePath-pickup-r">mousePlug</span>
+                のフォルダを使います。
+            </p>
+            <p class="p-sub-attach-bottom">
+                このフォルダだけを、
+                <abbr class="abbr-softName-r" title="TextRunRun">TRR</abbr>
+                のフォルダの中の
+            </p>
+            <div class="filePath-block">
+                trrEvery\Plugins
+            </div>
+            <p class="p-sub-attach-top">
+                この中にコピーしてください。
+            </p>
+        </section><!-- sectionSecond -->
+        <section id="title3_3" class="sectionSecond d-type-basic">
+            <h2 class="t-lank2">ソースコードを記入する</h2>
+            <p class="p-sub">
+                次は、ファイルの中に文字を記入します。
+            </p>
+            <div class="filePath-block">
+                trrEvery\Plugins
+            </div>
+            <p class="p-sub-attach-top">
+                このフォルダの中にある、<br />
+                <span class="filePath-pickup-r">pluginsSubroutineAndFunction&#46;ahk</span>
+                のファイルに以下を記入します。
+            </p>
+            <div class="width-long-wrap">
+                <div class="inputBox width-long-1">
+                    <pre><code class="srcCode"><span class="ahkComm">#Include</span> <span class="varPercent">&#37;A_ScriptDir&#37;</span>&#92;trrEvery&#92;Plugins&#92;mousePlug&#92;useForPlug&#92;mousePlugSubrouAndFunc&#46;ahk
+</code></pre>
+                </div>
+            </div>
+            <!--  スペース   -->
+            <div class="spacer-1"></div>
+            <p class="p-sub">
+                そして、同じフォルダ内にある<br />
+                <span class="filePath-pickup-r">pluginsStartUpExecute&#46;ahk</span>
+                のファイルに以下を記入します。
+            </p>
+            <div class="width-long-wrap">
+                <div class="inputBox width-long-1">
+                    <pre><code class="srcCode"><span class="ahkComm">#Include</span> <span class="varPercent">&#37;A_ScriptDir&#37;</span>&#92;trrEvery&#92;Plugins&#92;mousePlug&#92;useForPlug&#92;mousePlugStartUp&#46;ahk
+</code></pre>
+                </div>
+            </div>
+            <!--  スペース   -->
+            <div class="spacer-1"></div>
+            <p class="p-sub">
+                少し手間がかかりますが、以上で
+                <span class="thisword-s">mousePlug</span>
+                を使える様にする準備は終了です。
+            </p>
+            <p class="p-sub">
+                <abbr class="abbr-softName-r" title="TextRunRun">TRR</abbr>
+                を起動すれば使える様になっているはずです。
+            </p>
+            <div class="div-section-one d-type-basic">
+                <div class="instruction-one">
+                    <div class="instruction-execution">
+                        <p class="p-sub">
+                            使える様になったかどうかのテストとして
+                        </p>
+                        <div class="inputOneLine d-type-small">
+                            <code class="srcCode">
+                                <span class="ahkComm">Gosub</span>&#44; Mou_Plug_SubMenuEvery
+                            </code>
+                        </div>
+                        <p class="p-sub-attach-top">
+                            これを使ってみてください。
+                        </p>
+                        <p class="p-sub">
+                            これを使うと、先ほど説明に挙げたメニューが表示するはずです。
+                        </p>
+                        <div class="img-div">
+                            <img src="image/mousePlugImg/mouMenu.png" alt="画像">
+                        </div>
+                        <p class="p-sub">
+                            このメニューが表示されれば正しくソースコードが追加されている事になります。
+                        </p>
+                        <div class="bundle">
+                            <p class="p-sub">
+                                それと、うまくいったなら、このスクリプトを
+                                <span class="softDfn-s">常時使用のキー</span>
+                                か
+                                <span class="softDfn-s">アイテム</span>
+                                にしておけば手軽に使える様になると思います。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div><!--  div-section-one  -->
+        </section><!-- sectionSecond -->
+    </section><!-- sectionFirst -->
+    <section id="title4" class="sectionFirst d-type-basic">
+        <h1 class="t-lank1">マウスの位置を数字で指定するウインドウについて</h1>
+        <p class="p-sub">
+            使い方の説明に戻ります。
+        </p>
+        <p class="p-sub">
+            先ほどから、この
+            <span class="thisword-s">mousePlug</span>
+            は、
+        </p>
+        <ul class="ul-disc-mini">
+            <li><span class="guiText-r">指定位置から指定位置</span></li>
+            <li><span class="guiText-r">今の位置から指定位置</span></li>
+            <li><span class="guiText-r">今の位置からプラス</span></li>
+            <li><span class="guiText-r">クリックポイント</span></li>
+        </ul>
+        <p class="p-sub-attach-top">
+            この
+            <span class="numeral">4</span>
+            種類に大きく分かれていると書きました。
+        </p>
+        <p class="p-sub">
+            その種類ごとに、マウスの位置を数字で指定するウインドウがあります。
+        </p>
+        <div class="bundle">
+            <p class="p-sub">
+                ここでは、
+                <span class="guiText-r">指定位置から指定位置</span>
+                の種類のウインドウを使って説明しておきます。
+            </p>
+        </div>
+        <div class="img-div">
+            <img src="image/mousePlugImg/mouGuiAtoA.png" class="img-w-300px" alt="画像">
+        </div>
+        <!--  スペース   -->
+        <div class="spacer-1"></div>
+        <div class="bundle">
+            <p class="p-sub">
+                <span class="guiText-r">X</span>
+                （横）と
+                <span class="guiText-s">Y</span>
+                （縦）の位置
+            </p>
+        </div>
+        <p class="p-sub">
+            これらを数値で指定します。
+        </p>
+        <p class="p-sub">
+            <span class="guiText-r">Form</span>
+            が開始位置で、
+            <span class="guiText-r">To</span>
+            が終了位置の意味です。
+        </p>
+        <p class="p-sub">
+            <span class="button-gui-r">On</span>
+            のボタンを押すと、指定した位置でマウスをドラッグします。
+        </p>
+        <section id="title4_1" class="sectionSecond d-type-basic">
+            <h2 class="t-lank2">ウインドウを基準位置にするかどうか</h2>
+            <p class="p-sub">
+                <span class="guiText-r">From Screen Or ActiveWindow</span>
+                と書かれている箇所があります。
+            </p>
+            <p class="p-sub">
+                これは位置が、スクリーン
+                &#40;
+                パソコン画面
+                &#41;
+                を基準にした位置か、最前面のウインドウを基準にした位置かを選ぶものです。
+            </p>
+            <p class="p-bundle">
+                <span class="guiText-r">Screen</span>
+                にチェックがある状態なら、パソコン画面の左上の端が
+                <span class="pickup-easy-r">0</span>
+                の位置になります。
+            </p>
+            <div class="bundle">
+                <p class="p-sub">
+                    <span class="guiText-r">ActiveWindow</span>
+                    にチェックがある状態なら、最前面のウインドウの左上の端
+                    &#40;
+                    ウインドウタイトル部分を含む
+                    &#41;
+                    が
+                    <span class="pickup-easy-s">0</span>
+                    の位置になります。
+                </p>
+                <p class="p-sub">
+                    その場合、マイナスの値も意味を成す様になり、<br />
+                    <span class="guiText-r">X</span>
+                    が
+                    <span class="input-easy-s">-100</span>
+                    なら、最前面のウインドウの左上の端から左に 100 の位置に、<br />
+                    <span class="guiText-r">Y</span>
+                    が
+                    <span class="input-easy-s">-100</span>
+                    なら、最前面のウインドウの左上の端から上に 100 の位置を意味する様になります。
+
+                </p>
+            </div>
+        </section><!-- sectionSecond -->
+        <section id="title4_2" class="sectionSecond d-type-basic">
+            <h2 class="t-lank2">ウインドウタイトル</h2>
+            <p class="p-sub">
+                一番下に
+                <span class="guiText-s">ウインドウタイトル</span>
+                の入力欄があります。
+            </p>
+            <p class="p-sub">
+                ここに何らかの文字が記入している場合は、そのウインドウタイトルのウインドウを最前面にします。
+            </p>
+            <div class="supplement">
+                <div class="supplement-caption">
+                    補足
+                </div>
+                <p class="p-sub">
+                    <abbr class="abbr-softName-r" title="TextRunRun">TRR</abbr>
+                    のウインドウタイトルの指定は、前方一致です。
+                </p>
+                <div class="div-sub">
+                    <div class="caution inner">
+                        <div class="caution-caption">
+                            諸注意
+                        </div>
+                        <p class="p-sub">
+                            前方一致のルールを、ユーザーが意図的に変える事は可能ですが、変えた場合は
+                            <span class="softDfn">テキスト上のキー</span>
+                            が使用できなくなってしまいます。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="bundle">
+                <p class="p-sub">
+                    ウインドウをアクティブにするかどうかだけです。
+                </p>
+                <p class="p-sub">
+                    なので、ここに何も記入されていない場合か、記入があっても一致するウインドウタイトルのウインドウが無い場合は何もしません。
+                </p>
+            </div>
+        </section><!-- sectionSecond -->
+        <section id="title4_3" class="sectionSecond d-type-basic">
+            <h2 class="t-lank2">その他のウインドウ</h2>
+            <p class="p-sub">
+                この「マウスの位置を数字で指定するウインドウ」は他にも、<br />
+                <span class="guiText-r">今の位置から指定位置</span>
+                と<br />
+                <span class="guiText-r">今の位置からプラス</span>
+                の種類がありますが、説明する事は先程説明した事と同じです。
+            </p>
+            <p class="p-sub">
+                後は大体予想がつくと思うので説明を省略します。
+            </p>
+            <p class="p-sub">
+                どのようなものか、画像だけ載せておきます。
+            </p>
+            <div class="large-bundle">
+                <p class="p-sub">
+                    <span class="guiText-r">今の位置から指定位置</span>
+                    のウインドウ
+                </p>
+                <div class="img-div">
+                    <img src="image/mousePlugImg/mouGuiCtoA.png" class="img-w-300px" alt="画像">
+                </div>
+            </div>
+            <div class="large-bundle">
+                <p class="p-sub">
+                    <span class="guiText-r">今の位置からプラス</span>
+                    のウインドウ
+                </p>
+                <div class="img-div">
+                    <img src="image/mousePlugImg/mouGuiCtoP.png" class="img-w-300px" alt="画像">
+                </div>
+            </div>
+        </section><!-- sectionSecond -->
+    </section><!-- sectionFirst -->
+    <section id="title5" class="sectionFirst d-type-basic">
+        <h1 class="t-lank1">クリックポイント</h1>
+        <p class="p-sub">
+            <span class="guiText-r">クリックポイント</span>
+            という種類もあります。
+        </p>
+        <p class="p-sub">
+            これは単純に、指定した位置を左クリックするだけのものです。
+        </p>
+        <p class="p-sub">
+            メニューから
+            <span class="guiText-s">クリックポイント</span>
+            を選ぶと次のウインドウが表示します。
+        </p>
+        <div class="img-div">
+            <img src="image/mousePlugImg/mouGuiClickP.png" class="img-w-300px" alt="画像">
+        </div>
+        <div class="bundle">
+            <p class="p-sub">
+                このウインドウは、先程説明していた「マウスの位置を数字で指定するウインドウ」と説明する事がほぼ同じです。
+            </p>
+            <p class="p-sub-attach-bottom">
+                違いは、
+            </p>
+            <ul class="ul-disc-mini">
+                <li><span class="guiText-r">ダブルクリック</span></li>
+                <li><span class="guiText-r">Shiftを押す</span></li>
+                <li><span class="guiText-r">Ctrlを押す</span></li>
+            </ul>
+            <p class="p-sub-attach-top">
+                これらのチェックボックスがあるくらいです。
+            </p>
+            <p class="p-sub">
+                これも大体予想がつくと思うので説明を省略します。
+            </p>
+        </div>
+        <section id="title5_1" class="sectionSecond d-type-basic">
+            <h2 class="t-lank2">
+                <span class="button-gui-r">今のマウスの位置を読み出し</span>
+                のボタン
+            </h2>
+            <p class="p-sub">
+                <span class="windowName-r">マウスの登録</span>
+                のウインドウの
+                <span class="guiTab-s"><span class="guiTab-in">Tab4</span></span>
+                は、
+                <span class="guiText-r">クリックポイント</span>
+                について扱うものです。
+            </p>
+            <div class="img-div">
+                <img src="image/mousePlugImg/moulistClickP.png" class="img-w-300px" alt="画像">
+            </div>
+            <div class="bundle">
+                <p class="p-sub">
+                    このタブの箇所だけ他のタブと違うボタンがあるので説明をしておきます。
+                </p>
+            </div>
+            <p class="p-sub">
+                <span class="button-gui-r">今のマウスの位置を読み出し</span>
+                のボタンについてです。
+            </p>
+            <p class="p-sub">
+                このボタンを押すとマウスの位置の数字を
+                <span class="guiText-s">クリックポイント</span>
+                用の「マウスの位置を数字で指定するウインドウ」の入力欄に記入するというものです。
+            </p>
+            <div class="bundle">
+                <p class="p-sub">
+                    ボタンを押すと、以下のウインドウが表示します。
+                </p>
+                <div class="img-div">
+                    <img src="image/mousePlugImg/mouMsgWinOrSc.png" class="img-w-350px" alt="画像">
+                </div>
+            </div>
+            <div class="bundle">
+                <p class="p-sub">
+                    選択肢がでてきて、「スクリーンを基準」にするか、「最前面のウインドウを基準」にする位置かを選ぶ事になります。
+                </p>
+                <p class="p-sub">
+                    <span class="button-gui-r">はい</span>
+                    を選ぶと、「スクリーンを基準」に<br />
+                    <span class="button-gui-r">いいえ</span>
+                    を選ぶと、「最前面のウインドウを基準」にしたマウスの位置の数字が記入されます。
+                </p>
+                <div class="div-sub">
+                    <p class="brackets">
+                        その時の事ですが、<br />
+                        <span class="button-gui-r">はい</span>
+                        を選ぶと、
+                        <span class="guiText-s">Screen</span>
+                        の方にチェックが入り、<br />
+                        <span class="button-gui-r">いいえ</span>
+                        を選ぶと、
+                        <span class="guiText-s">ActiveWindow</span>
+                        の方にチェックが入ります。
+                    </p>
+                </div>
+                <div class="img-div">
+                    <img src="image/mousePlugImg/mouReadClickP.png" class="img-w-350px" alt="画像">
+                </div>
+            </div>
+            <div class="bundle">
+                <p class="p-sub">
+                    <span class="guiText-r">クリックポイント</span>
+                    を登録する際は、このボタンを使えばマウスを指定位置にもってくるだけで登録の準備ができます。
+                </p>
+                <p class="p-sub">
+                    その際は、マウスを動かさずにボタンを押す必要がある事になります。
+                </p>
+                <p class="p-sub">
+                    <span class="button-gui-r">今のマウスの位置を読み出し</span>
+                    は
+                    <kbd class="keyAny-combi"><kbd class="onekey">Alt</kbd><span class="plusofkey">&#43;</span><kbd class="onekey">R</kbd></kbd>
+                    でボタンを押せるのでそのキーを使えばよいと思います。
+                </p>
+                <p class="brackets">
+                    ボタンに
+                    &#40;<span class="underline-black">R</span>&#41;
+                    と書かれているのは、
+                    <kbd class="keyAny-combi"><kbd class="onekey">Alt</kbd><span class="plusofkey">&#43;</span><kbd class="onekey">R</kbd></kbd>
+                    でボタンが押せる事を意味しています。
+                </p>
+            </div>
+        </section><!-- sectionSecond -->
+        <section id="title5_2" class="sectionSecond d-type-basic">
+            <h2 class="t-lank2">クリックポイント切り替え</h2>
+            <p class="p-sub">
+                大した事ではないですが、一応説明しておきます。
+            </p>
+            <p class="p-sub">
+                メニュー内に
+                <span class="guiText-s">クリックポイント切り替え</span>
+                というものがあります。
+            </p>
+            <p class="p-sub">
+                それを選ぶと
+            </p>
+            <div class="img-div">
+                <img src="image/mousePlugImg/menuClickSel.png" class="img-w-450px" alt="画像">
+            </div>
+            <p class="p-sub">
+                このメニューが表示します。
+            </p>
+            <div class="bundle">
+                <p class="p-sub">
+                    これが何を意味しているかというと、単純に
+                    <span class="windowName-s">マウスの登録</span>
+                    のリストの
+                    <span class="guiText-s">クリックポイント</span>
+                    の種類の
+                    <br />
+                    <span class="pickup-easy-r">set1</span>
+                    から
+                    <span class="pickup-easy-r">set5</span>
+                    を意味しています。
+                </p>
+            </div>
+            <p class="p-sub">
+                単に
+                <span class="windowName-s">マウスの登録</span>
+                のウインドウのリストを切り替えた場合と同じです。
+            </p>
+            <p class="p-sub">
+                メニューからも使える様にしておいただけのものです。
+            </p>
+            <div class="supplement">
+                <div class="supplement-caption">
+                    補足
+                </div>
+                <p class="p-sub">
+                    このメニューから切り替えた場合も、
+                    <span class="windowName-r">マウスの登録</span>
+                    のウインドウのリスト内の選択位置が変わります。
+                </p>
+                <p class="brackets">
+                    <span class="guiText-r">クリックポイント２</span>
+                    を選んだら、
+                    <span class="pickup-easy-r">set2</span>
+                    が選ばれている状態になります。
+                </p>
+            </div>
+            <div class="div-section-one d-type-basic">
+                <p class="p-sub">
+                    <span class="guiText-r">クリックポイントの位置にマウスをもってくる</span>
+                    というメニューの項目があります。
+                </p>
+                <p class="p-sub">
+                    ちなみに初期の状態では、<br />
+                    <span class="windowName-r">マウスの登録</span>
+                    のリストの
+                    <span class="guiText-s">クリックポイント</span>
+                    の種類の
+                    <span class="pickup-easy-s">set1</span>
+                    が
+                    <span class="guiText-s">クリックポイント</span>
+                    として用意された状態になっています。
+                </p>
+                <p class="p-sub">
+                    よって、初期の状態では<br />
+                    <span class="guiText-r">クリックポイントの位置にマウスをもってくる</span>
+                    のメニューの項目を選ぶと、
+                    <span class="pickup-easy-r">set1</span>
+                    に登録してある箇所にマウスを移動する事になります。
+                </p>
+                <div class="supplement">
+                    <div class="supplement-caption">
+                        補足
+                    </div>
+                    <p class="p-sub">
+                        <span class="pickup-easy-r">set1</span>
+                        に何も登録していない場合、<br />
+                        X が
+                        <span class="pickup-easy-r">200</span><br />
+                        Y が
+                        <span class="pickup-easy-r">200</span><br />
+                        の位置がデフォルトで登録されている事になっています。
+                    </p>
+                </div>
+                <!--  スペース   -->
+                <div class="spacer-1"></div>
+                <div class="bundle">
+                    <ul class="ul-disc-mini">
+                        <li>
+                            <span class="windowName-s">マウスの登録</span>
+                            の
+                            <span class="guiText-s">クリックポイント</span>
+                            の種類のリストの
+                            <span class="pickup-easy-s">set1</span>
+                            などを変更して、
+                            <span class="button-gui-r">読み出し</span>
+                            ボタンを押す。
+                        </li>
+                        <li>
+                            メニューの
+                            <span class="guiText-s">クリックポイント切り替え</span>
+                            の項目から、
+                            <span class="guiText-r">クリックポイント</span>
+                            を切り替える。
+                        </li>
+                    </ul>
+                    <p class="p-sub">
+                        このどちらかをした場合、今の
+                        <span class="guiText-s">クリックポイント</span>
+                        が変わります。
+                    </p>
+                    <p class="p-sub">
+                        よって、
+                        <span class="guiText-r">クリックポイントの位置にマウスをもってくる</span>
+                        の項目を選んだ時のマウスの移動する位置が変更になるということです。
+                    </p>
+                </div>
+            </div><!--  div-section-one  -->
+        </section><!-- sectionSecond -->
+
+    </section><!-- sectionFirst -->
+    <div class="div-section-one d-type-wide">
+        <p class="p-sub">
+            必要な説明は大体以上だと思います。
+        </p>
+        <p class="p-sub">
+            この
+            <span class="thisword-s">mousePlug</span>
+            は
+            <span class="cancelline-bu">
+                <span class="thisword-s">windowPlug</span>
+                と同じく
+            </span><br />
+            使っていけばすぐに分かる様なものなので、これ以上読まなくても普通に使っていけると思います。
+        </p>
+        <p class="p-sub">
+            とはいえ、このホームページは仕様を全て記入していく事を目的にしています。
+        </p>
+        <p class="p-sub">
+            <span class="thisword-r">mousePlug</span>
+            についての説明しておきたい事はまだあるのでこの後もまだ説明は続きます。
+        </p>
+        <p class="p-sub">
+            ただし、これ以降は
+            <span class="thisword-s">mousePlug</span>
+            の細かい仕様についての事になります。
+        </p>
+        <p class="p-sub">
+            ですので、さらにいろいろ知りたい方はこれ以降も読んでみてください。
+        </p>
+    </div><!--  div-section-one  -->
+
+
+    <div class="div-section-one d-type-basic">
+        <div class="pagination1 d-type-small-basic">
+            <a href="#" class="p1-prev hidden-bu">前へ</a>
+            <a href="mousePlug2.html" class="p1-next">次へ</a>
+        </div>
+        <nav class="categorylinks">
+            <div class="categorylinks-title">
+                <span class="span-categorylinks-title">mousePlugの関連</span>
+            </div>
+            <ul class="ul-categorylinks-row">
+                <li class="categorylinks-current">その<span class="numeral">1</span></li>
+                <li><a href="mousePlug2.html">その<span class="numeral">2</span></a></li>
+                <li><a href="mousePlugDict.html">mousePlugの変数・関数・サブルーチン</a></li>
+            </ul>
+        </nav>
+    </div><!--  div-section-one  -->
+
+
+
+
+</div><!-- width-short -->
+
+</article>
+
+</main>
+
+    <div id="edgeMenuArea">
+        <nav class="nav-side">
+            <div class="edgeAreaSpace">
+                <p class="p-sub">
+                    何かに使うかもしれないサイドエリア
+                </p>
+            </div>
+        </nav>
+        
+    </div><!-- edgeMenuArea -->
+
+</div><!-- page-contents -->
+
+<footer id="footer-wrapper">
+    <div id="footer-trrpage">
+        <div class="footer-trrpage-block">
+            <div class="footer-trrpage-caption">
+                作者ブランボンのホームページ：
+            </div>
+            <div class="footer-trrpagelink">
+                <p class="footer-trrpagelink-p">
+                    <span class="trrhomepage spacePlus-r"><a href="https://textrunrunburanbon.com">TextRunRunの説明を見るページ</a></span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="footer-buranbon">
+        <small id="small-footer-buranbon"><span id="in-footer-buranbon">Copyright &copy; ブランボン</span></small>
+    </div>
+</footer>
+
+    <div id="div-pageTop-oth">
+        <a href="#pagetop-first" class="a-pageTop-oth"><span class="span-pageTop-up-oth">↑</span></a>
+    </div>
+
+    <button id="anywhere-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <nav id="anywhere-menu">
+        <ul class="ul-index-preface">
+            <li>
+                <a href="#title_preface">前書き</a>
+            </li>
+        </ul>
+        <ul class="ul-index-thispage">
+            <li>
+                <a href="#title1">概要</a>
+            </li>
+            <li>
+                <a href="#title2">マウスのドラッグ位置を登録する</a>
+            </li>
+            <li>
+                <a href="#title3">ソースコードへの追加の仕方</a>
+                <ul class="ul-index-thispage-2">
+                    <li>
+                        <a href="#title3_1">mousePlug のダウンロード</a>
+                    </li>
+                    <li>
+                        <a href="#title3_2">mousePlug のフォルダをコピーする</a>
+                    </li>
+                    <li>
+                        <a href="#title3_3">ソースコードを記入する</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#title4">マウスの位置を数字で指定するウインドウについて</a>
+                <ul class="ul-index-thispage-2">
+                    <li>
+                        <a href="#title4_1">ウインドウを基準位置にするかどうか</a>
+                    </li>
+                    <li>
+                        <a href="#title4_2">ウインドウタイトル</a>
+                    </li>
+                    <li>
+                        <a href="#title4_3">その他のウインドウ</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#title5">クリックポイント</a>
+                <ul class="ul-index-thispage-2">
+                    <li>
+                        <a href="#title5_1">今のマウスの位置を読み出し</a>
+                    </li>
+                    <li>
+                        <a href="#title5_2">クリックポイント切り替え</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+</div><!-- allContents -->
+</body>
+</html>
