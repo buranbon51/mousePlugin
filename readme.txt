@@ -4,6 +4,11 @@
 Web：https://textrunrunburanbon.com  
 
 
+使い方を説明したページ
+https://buranbon51.github.io/mousePlugin/
+
+
+
 マウスの動きを保存するものです。
 簡易的なものです。
 

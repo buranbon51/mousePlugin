@@ -3256,7 +3256,7 @@ ul.ul-categorylinks-in li{
 
 /* ひとつ上の階層へ */
 .altuplink{
-    margin-top: 80px;
+    margin-top: 40px;
     
 }
 
@@ -3275,8 +3275,7 @@ ul.ul-categorylinks-in li{
 }
 
 a.a-altuplink{
-    text-decoration: none;
-    color: #000;
+
 }
 
 a.a-altuplink:hover,
